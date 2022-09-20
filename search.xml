@@ -5,12 +5,24 @@
     
     <entry>
       <title>Spring 笔记一</title>
-      <link href="/2022/09/19/hello-world/"/>
-      <url>/2022/09/19/hello-world/</url>
+      <link href="/2022/09/20/hello-world/"/>
+      <url>/2022/09/20/hello-world/</url>
       
         <content type="html"><![CDATA[<h1 id="spring快速入门"><a href="#spring快速入门" class="headerlink" title="spring快速入门"></a>spring快速入门</h1><h3 id="在pom文件中导入spring坐标"><a href="#在pom文件中导入spring坐标" class="headerlink" title="在pom文件中导入spring坐标"></a>在pom文件中导入spring坐标</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.10.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="生成spring-config文件"><a href="#生成spring-config文件" class="headerlink" title="生成spring config文件"></a>生成spring config文件</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;类名&quot;</span> <span class="attr">class</span>=<span class="string">&quot;类所在位置&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure><h3 id="获取IoC容器"><a href="#获取IoC容器" class="headerlink" title="获取IoC容器"></a>获取IoC容器</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ApplicationContext</span> <span class="variable">ctx</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(<span class="string">&quot;spring config文件名&quot;</span>);</span><br></pre></td></tr></table></figure><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> (Object) ctx.getBean(<span class="string">&quot;bean id&quot;</span>);</span><br></pre></td></tr></table></figure>]]></content>
       
       
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> spring </tag>
+            
+        </tags>
       
     </entry>
     
