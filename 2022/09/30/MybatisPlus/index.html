@@ -1,0 +1,466 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>MybatisPlus笔记 | 土灵猪</title><meta name="keywords" content="MybatisPlus"><meta name="author" content="Z"><meta name="copyright" content="Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="MybatisPlus笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MybatisPlus笔记">
+<meta property="og:url" content="https://new-zxp.github.io/2022/09/30/MybatisPlus/index.html">
+<meta property="og:site_name" content="土灵猪">
+<meta property="og:description" content="MybatisPlus笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg">
+<meta property="article:published_time" content="2022-09-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-09-29T13:20:46.473Z">
+<meta property="article:author" content="Z">
+<meta property="article:tag" content="MybatisPlus">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://new-zxp.github.io/2022/09/30/MybatisPlus/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":100},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Z","link":"链接: ","source":"来源: 土灵猪","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MybatisPlus笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2022-09-29 21:20:46'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/constown/HexoCustomFile@0.0.4/dist/css/custom.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">土灵猪</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MybatisPlus笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-29T16:00:00.000Z" title="发表于 2022-09-30 00:00:00">2022-09-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-29T13:20:46.473Z" title="更新于 2022-09-29 21:20:46">2022-09-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MybatisPlus笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="MyBatisPlus"><a href="#MyBatisPlus" class="headerlink" title="MyBatisPlus"></a>MyBatisPlus</h1><p>MybatisPlus(简称MP)是基于MyBatis框架基础上开发的增强型工具，旨在简化开发、提供效率。</p>
+<p>入门案例：</p>
+<ol>
+<li><p>创建Spring Initializr模块，在SQL中选择Mysql依赖</p>
+</li>
+<li><p>导入mybatis-plus-boot-starter和druid坐标</p>
+</li>
+<li><p>定义user类和UserDao类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zxp.dao;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.core.mapper.BaseMapper;</span><br><span class="line"><span class="keyword">import</span> com.zxp.domain.User;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.annotations.Mapper;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Mapper</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">UserDao</span> <span class="keyword">extends</span> <span class="title class_">BaseMapper</span>&lt;User&gt; &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MybatisPlusApplicationTests</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserDao userDao;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> userDao.selectById(<span class="number">1</span>);</span><br><span class="line">        System.out.println(user);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>MP的特性:</p>
+<ul>
+<li>无侵入：只做增强不做改变，不会对现有工程产生影响</li>
+<li>强大的 CRUD 操作：内置通用 Mapper，少量配置即可实现单表CRUD 操作</li>
+<li>支持 Lambda：编写查询条件无需担心字段写错</li>
+<li>支持主键自动生成</li>
+<li>内置分页插件</li>
+</ul>
+<h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2><ul>
+<li><p>新增:int insert (T t)&#x2F;&#x2F;新增成功后返回1，失败返回0</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testSave</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">    user.setName(<span class="string">&quot;a&quot;</span>);</span><br><span class="line">    userDao.insert(user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除:int deleteById (Serializable id)&#x2F;&#x2F;Serializable：参数类型(String等的父类)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testDelete</span><span class="params">()</span>&#123;</span><br><span class="line">    userDao.deleteById(<span class="number">3</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改:int updateById(T t);</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testUpdate</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">        user.setId(<span class="number">1L</span>);<span class="comment">//L表示这是一个long类型的数字</span></span><br><span class="line">        user.setName(<span class="string">&quot;b&quot;</span>);</span><br><span class="line">        userDao.updateById(user);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>根据ID查询:T selectById (Serializable id)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetById</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> userDao.selectById(<span class="number">1</span>);</span><br><span class="line">    System.out.println(user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询所有:List<T> selectList(Wrapper<T> queryWrapper)<br>&#x2F;&#x2F;Wrapper：用来构建条件查询的条件，目前我们没有可直接传为Null</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">    List&lt;User&gt; userList = userDao.selectList(<span class="literal">null</span>);</span><br><span class="line">    System.out.println(userList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>分页查询</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetByPage</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">IPage</span> <span class="variable">page</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Page</span>(<span class="number">1</span>,<span class="number">2</span>);<span class="comment">//第一个参数为当前页码，第二个参数为每页显示的条数</span></span><br><span class="line">    userDao.selectPage(page,<span class="literal">null</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;当前页码：&quot;</span> + page.getCurrent());</span><br><span class="line">    System.out.println(<span class="string">&quot;每页显示条数：&quot;</span> + page.getSize());</span><br><span class="line">    System.out.println(<span class="string">&quot;总页数&quot;</span> + page.getPages());</span><br><span class="line">    System.out.println(<span class="string">&quot;总条数&quot;</span> + page.getTotal());</span><br><span class="line">    System.out.println(<span class="string">&quot;数据&quot;</span> + page.getRecords());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>需要在配置文件MpConfig中添加分页拦截器才能正常运行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MpConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> MybatisPlusInterceptor <span class="title function_">mpInterceptor</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//定义Mp拦截器</span></span><br><span class="line">        <span class="type">MybatisPlusInterceptor</span> <span class="variable">mpInterceptor</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MybatisPlusInterceptor</span>();</span><br><span class="line">        <span class="comment">//添加具体拦截器</span></span><br><span class="line">        mpInterceptor.addInnerInterceptor(<span class="keyword">new</span> <span class="title class_">PaginationInnerInterceptor</span>());</span><br><span class="line">        <span class="keyword">return</span> mpInterceptor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Lombok"><a href="#Lombok" class="headerlink" title="Lombok"></a>Lombok</h2><p>Lombok：一个Java类库，提供了一组注解，简化POJO实体类开发</p>
+<p>添加lombok依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;version&gt;1.18.12&lt;/version&gt;--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Lombok常见的注解有:</p>
+<ul>
+<li>@Setter:为模型类的属性提供setter方法</li>
+<li>@Getter:为模型类的属性提供getter方法</li>
+<li>@ToString:为模型类的属性提供toString方法</li>
+<li>@EqualsAndHashCode:为模型类的属性提供equals和hashcode方法</li>
+<li>&#x3D;&#x3D;@Data:是个组合注解，包含上面的注解的功能&#x3D;&#x3D;</li>
+<li>&#x3D;&#x3D;@NoArgsConstructor:提供一个无参构造函数&#x3D;&#x3D;</li>
+<li>&#x3D;&#x3D;@AllArgsConstructor:提供一个包含所有参数的构造函数&#x3D;&#x3D;</li>
+</ul>
+<p><strong>开启MP日志</strong>：在application.yml中添加</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#开启mp的日志（输出到控制台）</span></span><br><span class="line"><span class="attr">mybatis-plus:</span></span><br><span class="line">  <span class="attr">configuration:</span></span><br><span class="line">    <span class="attr">log-impl:</span> <span class="string">org.apache.ibatis.logging.stdout.StdOutImpl</span></span><br></pre></td></tr></table></figure>
+
+<p>条件查询三种格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">QueryWrapper</span> <span class="variable">qw</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">QueryWrapper</span>();</span><br><span class="line">    qw.lt(<span class="string">&quot;age&quot;</span>,<span class="number">18</span>);<span class="comment">//lt：小于</span></span><br><span class="line">    List&lt;User&gt; userList = userDao.selectList(qw);</span><br><span class="line">    System.out.println(userList);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//lambda格式按条件查询</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">    QueryWrapper&lt;User&gt; qw = <span class="keyword">new</span> <span class="title class_">QueryWrapper</span>&lt;User&gt;();</span><br><span class="line">    qw.lambda().lt(User::getAge, <span class="number">10</span>);<span class="comment">//添加条件</span></span><br><span class="line">    List&lt;User&gt; userList = userDao.selectList(qw);</span><br><span class="line">    System.out.println(userList);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">    LambdaQueryWrapper&lt;User&gt; lqw = <span class="keyword">new</span> <span class="title class_">LambdaQueryWrapper</span>&lt;User&gt;();</span><br><span class="line">    lqw.lt(User::getAge, <span class="number">10</span>);</span><br><span class="line">    List&lt;User&gt; userList = userDao.selectList(lqw);</span><br><span class="line">    System.out.println(userList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="多条件查询"><a href="#多条件查询" class="headerlink" title="多条件查询"></a>多条件查询</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">    LambdaQueryWrapper&lt;User&gt; lqw = <span class="keyword">new</span> <span class="title class_">LambdaQueryWrapper</span>&lt;User&gt;();</span><br><span class="line">    <span class="comment">//小于30且大于10</span></span><br><span class="line">    lqw.lt(User::getAge, <span class="number">30</span>).lqw.gt(User::getAge, <span class="number">10</span>);</span><br><span class="line">    <span class="comment">//小于10或者大于30</span></span><br><span class="line">    lqw.lt(User::getAge, <span class="number">10</span>).or().gt(User::getAge, <span class="number">30</span>);</span><br><span class="line">    List&lt;User&gt; userList = userDao.selectList(lqw);</span><br><span class="line">    System.out.println(userList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="null判定"><a href="#null判定" class="headerlink" title="null判定"></a>null判定</h2><p>后台如果想接收前端的两个数据，该如何接收?</p>
+<p>新建一个模型类,让其继承User类，并在其中添加age2属性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span><span class="comment">//Lombok注解</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserQuery</span> <span class="keyword">extends</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Integer age2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>进行null判定</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Mybatisplus02DqlApplicationTests</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserDao userDao;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//模拟页面传递过来的查询数据</span></span><br><span class="line">        <span class="type">UserQuery</span> <span class="variable">uq</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UserQuery</span>();</span><br><span class="line">        uq.setAge(<span class="number">10</span>);</span><br><span class="line">        uq.setAge2(<span class="number">30</span>);</span><br><span class="line">        LambdaQueryWrapper&lt;User&gt; lqw = <span class="keyword">new</span> <span class="title class_">LambdaQueryWrapper</span>&lt;User&gt;();</span><br><span class="line">        lqw.lt(<span class="literal">null</span>!=uq.getAge2(),User::getAge, uq.getAge2());</span><br><span class="line">        lqw.gt(<span class="literal">null</span>!=uq.getAge(),User::getAge, uq.getAge());</span><br><span class="line">        List&lt;User&gt; userList = userDao.selectList(lqw);</span><br><span class="line">        System.out.println(userList);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询投影"><a href="#查询投影" class="headerlink" title="查询投影"></a>查询投影</h2><p><strong>查询指定字段</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">    LambdaQueryWrapper&lt;User&gt; lqw = <span class="keyword">new</span> <span class="title class_">LambdaQueryWrapper</span>&lt;User&gt;();</span><br><span class="line">    <span class="comment">//只查询Id和Name</span></span><br><span class="line">    lqw.select(User::getId,User::getName);</span><br><span class="line">    List&lt;User&gt; userList = userDao.selectList(lqw);</span><br><span class="line">    System.out.println(userList);&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//不使用lambda表达式        </span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">    QueryWrapper&lt;User&gt; lqw = <span class="keyword">new</span> <span class="title class_">QueryWrapper</span>&lt;User&gt;();</span><br><span class="line">    lqw.select(<span class="string">&quot;id&quot;</span>,<span class="string">&quot;name&quot;</span>,<span class="string">&quot;age&quot;</span>,<span class="string">&quot;tel&quot;</span>);</span><br><span class="line">    List&lt;User&gt; userList = userDao.selectList(lqw);</span><br><span class="line">    System.out.println(userList);&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>聚合查询</strong></p>
+<ul>
+<li><p>count:总记录数</p>
+</li>
+<li><p>max:最大值</p>
+</li>
+<li><p>min:最小值</p>
+</li>
+<li><p>avg:平均值</p>
+</li>
+<li><p>sum:求和</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">    QueryWrapper&lt;User&gt; lqw = <span class="keyword">new</span> <span class="title class_">QueryWrapper</span>&lt;User&gt;();</span><br><span class="line">    <span class="comment">//查询总数</span></span><br><span class="line">    lqw.select(<span class="string">&quot;count(*) as count&quot;</span>);</span><br><span class="line">    <span class="comment">//求年龄最大值</span></span><br><span class="line">    lqw.select(<span class="string">&quot;max(age) as maxAge&quot;</span>);</span><br><span class="line">    <span class="comment">//求年龄总和</span></span><br><span class="line">    lqw.select(<span class="string">&quot;sum(age) as sumAge&quot;</span>);</span><br><span class="line">    <span class="comment">//求年龄平均值</span></span><br><span class="line">    lqw.select(<span class="string">&quot;avg(age) as avgAge&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    List&lt;Map&lt;String, Object&gt;&gt; userMap = userDao.selectMaps(lqw);</span><br><span class="line">    System.out.println(userList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>分组查询</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">    QueryWrapper&lt;User&gt; lqw = <span class="keyword">new</span> <span class="title class_">QueryWrapper</span>&lt;User&gt;();</span><br><span class="line">    lqw.select(<span class="string">&quot;count(*) as count,tel&quot;</span>);</span><br><span class="line">    lqw.groupBy(<span class="string">&quot;tel&quot;</span>);</span><br><span class="line">    List&lt;Map&lt;String, Object&gt;&gt; list = userDao.selectMaps(lqw);</span><br><span class="line">    System.out.println(list);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询条件"><a href="#查询条件" class="headerlink" title="查询条件"></a>查询条件</h2><p><strong>查询条件</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">    LambdaQueryWrapper&lt;User&gt; lqw = <span class="keyword">new</span> <span class="title class_">LambdaQueryWrapper</span>&lt;User&gt;();</span><br><span class="line">    <span class="comment">//查询名字为jerry密码也为jerry的用户，eq()相当于&quot;=&quot;</span></span><br><span class="line">    lqw.eq(User::getName, <span class="string">&quot;Jerry&quot;</span>).eq(User::getPassword, <span class="string">&quot;jerry&quot;</span>);</span><br><span class="line">    <span class="type">User</span> <span class="variable">loginUser</span> <span class="operator">=</span> userDao.selectOne(lqw);<span class="comment">//查询一个</span></span><br><span class="line">    System.out.println(loginUser);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>范围查询</strong>:</p>
+<ul>
+<li>gt():大于(&gt;)</li>
+<li>ge():大于等于(&gt;&#x3D;)</li>
+<li>lt():小于(&lt;)</li>
+<li>lte():小于等于(&lt;&#x3D;)</li>
+<li>between():between ? and ?</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">    LambdaQueryWrapper&lt;User&gt; lqw = <span class="keyword">new</span> <span class="title class_">LambdaQueryWrapper</span>&lt;User&gt;();</span><br><span class="line">    lqw.between(User::getAge, <span class="number">10</span>, <span class="number">30</span>);</span><br><span class="line">    <span class="comment">//SELECT id,name,password,age,tel FROM user WHERE (age BETWEEN ? AND ?)</span></span><br><span class="line">    List&lt;User&gt; userList = userDao.selectList(lqw);</span><br><span class="line">    System.out.println(userList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>模糊查询</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">    LambdaQueryWrapper&lt;User&gt; lqw = <span class="keyword">new</span> <span class="title class_">LambdaQueryWrapper</span>&lt;User&gt;();</span><br><span class="line">    lqw.likeLeft(User::getName, <span class="string">&quot;J&quot;</span>);</span><br><span class="line">    <span class="comment">//SELECT id,name,password,age,tel FROM user WHERE (name LIKE %?)</span></span><br><span class="line">    List&lt;User&gt; userList = userDao.selectList(lqw);</span><br><span class="line">    System.out.println(userList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="映射匹配兼容性"><a href="#映射匹配兼容性" class="headerlink" title="映射匹配兼容性"></a>映射匹配兼容性</h2><ul>
+<li><p>当表的列名和模型类的属性名发生不一致，就会导致数据封装不到模型对象</p>
+<p>@TableField:使用该注解可以实现模型类属性名和表的列名之间的映射关系</p>
+</li>
+<li><p>编码中添加了数据库未定义的属性</p>
+<p>在未定义的属性上加上@TableField（exist &#x3D; false）表示数据库里不存在</p>
+</li>
+<li><p>不想让密码被查询出来</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span>&#123;</span><br><span class="line">    <span class="meta">@TableField(value=&quot;pwd&quot;,select = false)</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表名与编码开发设计不同</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TableName(&quot;tbl_user&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="id生成策略控制"><a href="#id生成策略控制" class="headerlink" title="id生成策略控制"></a>id生成策略控制</h2><p><strong>不同的表应用不同的id生成策略</strong></p>
+<ul>
+<li>日志：自增（1,2,3,4，……）</li>
+<li>购物订单：特殊规则（FQ23948AK3843）</li>
+<li>外卖单：关联地区日期等信息（10 04 20200314 34 91）</li>
+<li>关系表：可省略id</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="meta">@TableId(type = IdType.AUTO)</span></span><br><span class="line">    <span class="keyword">private</span> Long id;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>NONE: 不设置id生成策略</p>
+</li>
+<li><p>AUTO：使数据库ID自增</p>
+</li>
+<li><p>INPUT：用户手工输入id（user.setId(xxx)）</p>
+<p>这种ID生成策略，需要将表的自增策略删除掉</p>
+</li>
+<li><p>ASSIGN_ID：雪花算法生成id(可兼容数值型与字符串型)</p>
+<p>主键的类型是bigInt</p>
+</li>
+<li><p>ASSIGN_UUID：以UUID生成算法作为id生成策略</p>
+<p>主键改成varchar(String)类型，长度要大于32</p>
+</li>
+<li><p>其他的几个策略均已过时，都将被ASSIGN_ID和ASSIGN_UUID代替掉。</p>
+</li>
+</ul>
+<p><strong>所有模型使用相同的id生成策略</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mybatis-plus:</span></span><br><span class="line">  <span class="attr">global-config:</span></span><br><span class="line">    <span class="attr">db-config:</span></span><br><span class="line">    	<span class="attr">id-type:</span> <span class="string">assign_id</span></span><br><span class="line">    	<span class="comment">#默认表名前缀</span></span><br><span class="line">    	<span class="attr">table-prefix:</span> <span class="string">tbl_</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="多数据操作（删除与查询）"><a href="#多数据操作（删除与查询）" class="headerlink" title="多数据操作（删除与查询）"></a>多数据操作（删除与查询）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testDelete</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="comment">//删除指定多条数据</span></span><br><span class="line">    List&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    list.add(<span class="number">1</span>);</span><br><span class="line">    list.add(<span class="number">2</span>);</span><br><span class="line">    list.add(<span class="number">3</span>);</span><br><span class="line">    <span class="comment">//根据传入的id集合将数据库表中的数据删除掉</span></span><br><span class="line">    userDao.deleteBatchIds(list);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testGetByIds</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="comment">//查询指定多条数据</span></span><br><span class="line">    List&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    list.add(<span class="number">1</span>);</span><br><span class="line">    list.add(<span class="number">3</span>);</span><br><span class="line">    list.add(<span class="number">4</span>);</span><br><span class="line">    userDao.selectBatchIds(list);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="逻辑删除"><a href="#逻辑删除" class="headerlink" title="逻辑删除"></a>逻辑删除</h2><p>逻辑删除:为数据设置是否可用状态字段，删除时设置状态字段为不可用状态，数据保留在数据库中，执行的是update操作</p>
+<ol>
+<li><p>修改数据库表添加<code>deleted</code>列（设置默认值为0）</p>
+</li>
+<li><p>实体类添加属性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line"><span class="meta">@TableLogic(value=&quot;0&quot;,delval=&quot;1&quot;)</span></span><br><span class="line">    <span class="comment">//value为正常数据的值，delval为删除数据的值</span></span><br><span class="line">    <span class="keyword">private</span> Integer deleted;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者在配置文件中添加全局配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mybatis-plus:</span></span><br><span class="line">  <span class="attr">global-config:</span></span><br><span class="line">    <span class="attr">db-config:</span></span><br><span class="line">      <span class="comment"># 逻辑删除字段名</span></span><br><span class="line">      <span class="attr">logic-delete-field:</span> <span class="string">deleted</span></span><br><span class="line">      <span class="comment"># 逻辑删除字面值：未删除为0</span></span><br><span class="line">      <span class="attr">logic-not-delete-value:</span> <span class="number">0</span></span><br><span class="line">      <span class="comment"># 逻辑删除字面值：删除为1</span></span><br><span class="line">      <span class="attr">logic-delete-value:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>MP的逻辑删除会将所有的查询都添加一个未被删除的条件，已经被删除的数据没有查询出来。</p>
+</li>
+</ol>
+<h2 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h2><p>业务并发现象带来的问题:&#x3D;&#x3D;秒杀&#x3D;&#x3D;：假如有100个商品或者票在出售，为了能保证每个商品或者票只能被一个人购买，如何保证不会出现超买或者重复卖</p>
+<p>乐观锁适用于并发量小于2000的情况</p>
+<ol>
+<li><p>列名可以任意，比如使用<code>version</code>,给列设置默认值为<code>1</code></p>
+</li>
+<li><p>在模型类中添加对应的属性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;    </span><br><span class="line">    <span class="meta">@Version</span>  </span><br><span class="line">    <span class="keyword">private</span> Integer version;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加乐观锁的拦截器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MpConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> MybatisPlusInterceptor <span class="title function_">mpInterceptor</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//1.定义Mp拦截器</span></span><br><span class="line">        <span class="type">MybatisPlusInterceptor</span> <span class="variable">mpInterceptor</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MybatisPlusInterceptor</span>();</span><br><span class="line">        <span class="comment">//2.添加乐观锁拦截器</span></span><br><span class="line">        mpInterceptor.addInnerInterceptor(<span class="keyword">new</span> <span class="title class_">OptimisticLockerInnerInterceptor</span>());</span><br><span class="line">        <span class="keyword">return</span> mpInterceptor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>要想实现乐观锁，首先第一步应该是拿到表中的version，然后拿version当条件将version加1更新回到数据库表中</p>
+<p>两种方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testUpdate</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">    user.setId(<span class="number">3L</span>);</span><br><span class="line">    user.setName(<span class="string">&quot;Jock666&quot;</span>);</span><br><span class="line">    user.setVersion(<span class="number">1</span>);</span><br><span class="line">    userDao.updateById(user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testUpdate</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="comment">//1.先通过要修改的数据id将当前数据查询出来</span></span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> userDao.selectById(<span class="number">3L</span>);</span><br><span class="line">    <span class="comment">//2.将要修改的属性逐一设置进去</span></span><br><span class="line">    user.setName(<span class="string">&quot;Jock888&quot;</span>);</span><br><span class="line">    userDao.updateById(user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>原理：</p>
+<ul>
+<li>假如第一个线程先执行更新，会把version改为2，</li>
+</ul>
+<ul>
+<li>第二个线程再更新的时候，set version &#x3D; 2 where version &#x3D; 1,此时数据库表的数据version已经为2，所以第二个线程会修改失败</li>
+<li>不管谁先执行都会确保只能有一个线程更新数据，这就是MP提供的乐观锁的实现原理分析。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testUpdate</span><span class="params">()</span>&#123;</span><br><span class="line">   <span class="comment">//1.先通过要修改的数据id将当前数据查询出来</span></span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> userDao.selectById(<span class="number">3L</span>);     <span class="comment">//version=1</span></span><br><span class="line">    <span class="type">User</span> <span class="variable">user2</span> <span class="operator">=</span> userDao.selectById(<span class="number">3L</span>);    <span class="comment">//version=1</span></span><br><span class="line">    user2.setName(<span class="string">&quot;Jock aaa&quot;</span>);</span><br><span class="line">    userDao.updateById(user2);              <span class="comment">//version=2</span></span><br><span class="line">    user.setName(<span class="string">&quot;Jock bbb&quot;</span>);</span><br><span class="line">    userDao.updateById(user);               <span class="comment">//verion=1条件不成立</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码生成器"><a href="#代码生成器" class="headerlink" title="代码生成器"></a>代码生成器</h2><ol>
+<li><p>导入对应的jar包</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--代码生成器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-generator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   </span><br><span class="line"><span class="comment">&lt;!--velocity模板引擎--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.velocity<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>velocity-engine-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建代码生成类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CodeGenerator</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//1.获取代码生成器的对象</span></span><br><span class="line">        <span class="type">AutoGenerator</span> <span class="variable">autoGenerator</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AutoGenerator</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置数据库相关配置</span></span><br><span class="line">        <span class="type">DataSourceConfig</span> <span class="variable">dataSource</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DataSourceConfig</span>();</span><br><span class="line">        dataSource.setDriverName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line">        dataSource.setUrl(<span class="string">&quot;jdbc:mysql://localhost:3306/ssm&quot;</span>);</span><br><span class="line">        dataSource.setUsername(<span class="string">&quot;root&quot;</span>);</span><br><span class="line">        dataSource.setPassword(<span class="string">&quot;1234&quot;</span>);</span><br><span class="line">        autoGenerator.setDataSource(dataSource);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置全局配置</span></span><br><span class="line">        <span class="type">GlobalConfig</span> <span class="variable">globalConfig</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">GlobalConfig</span>();</span><br><span class="line">        <span class="comment">//设置代码生成位置       </span></span><br><span class="line">globalConfig.setOutputDir(System.getProperty(<span class="string">&quot;user.dir&quot;</span>)+<span class="string">&quot;/模块名/src/main/java&quot;</span>);    </span><br><span class="line">    globalConfig.setOpen(<span class="literal">false</span>);    <span class="comment">//设置生成完毕后是否打开生成代码所在的目录</span></span><br><span class="line">    globalConfig.setAuthor(<span class="string">&quot;xxx&quot;</span>);    <span class="comment">//设置作者</span></span><br><span class="line">    globalConfig.setFileOverride(<span class="literal">true</span>);  <span class="comment">//设置是否覆盖原始生成的文件</span></span><br><span class="line">    globalConfig.setMapperName(<span class="string">&quot;%sDao&quot;</span>); <span class="comment">//设置数据层接口名，%s为占位符，指代模块名称</span></span><br><span class="line">    globalConfig.setIdType(IdType.ASSIGN_ID);   <span class="comment">//设置Id生成策略</span></span><br><span class="line">    autoGenerator.setGlobalConfig(globalConfig);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置包名相关配置</span></span><br><span class="line">        <span class="type">PackageConfig</span> <span class="variable">packageInfo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PackageConfig</span>();</span><br><span class="line">        packageInfo.setParent(<span class="string">&quot;com.zxp&quot;</span>);   <span class="comment">//设置生成的包名</span></span><br><span class="line">        packageInfo.setEntity(<span class="string">&quot;domain&quot;</span>);    <span class="comment">//设置实体类包名</span></span><br><span class="line">        packageInfo.setMapper(<span class="string">&quot;dao&quot;</span>);   <span class="comment">//设置数据层包名</span></span><br><span class="line">        autoGenerator.setPackageInfo(packageInfo);</span><br><span class="line"></span><br><span class="line">     <span class="comment">//策略设置</span></span><br><span class="line">     <span class="type">StrategyConfig</span> <span class="variable">strategyConfig</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StrategyConfig</span>();</span><br><span class="line">     strategyConfig.setInclude(<span class="string">&quot;tbl_user&quot;</span>);  <span class="comment">//设置当前参与生成的表名，参数为可变参数</span></span><br><span class="line">     strategyConfig.setTablePrefix(<span class="string">&quot;tbl_&quot;</span>);  <span class="comment">//设置数据库表的前缀名称，tbl_会去掉</span></span><br><span class="line">        strategyConfig.setRestControllerStyle(<span class="literal">true</span>);    <span class="comment">//设置是否启用Rest风格</span></span><br><span class="line">        strategyConfig.setVersionFieldName(<span class="string">&quot;version&quot;</span>);  <span class="comment">//设置乐观锁字段名</span></span><br><span class="line">        strategyConfig.setLogicDeleteFieldName(<span class="string">&quot;deleted&quot;</span>);  <span class="comment">//设置逻辑删除字段名</span></span><br><span class="line">        strategyConfig.setEntityLombokModel(<span class="literal">true</span>);  <span class="comment">//设置是否启用lombok</span></span><br><span class="line">        autoGenerator.setStrategy(strategyConfig);</span><br><span class="line">        <span class="comment">//2.执行生成操作</span></span><br><span class="line">        autoGenerator.execute();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://new-zxp.github.io">Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://new-zxp.github.io/2022/09/30/MybatisPlus/">https://new-zxp.github.io/2022/09/30/MybatisPlus/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://new-zxp.github.io" target="_blank">土灵猪</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MybatisPlus/">MybatisPlus</a></div><div class="post_share"><div class="social-share" data-image="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/09/21/ssm/"><img class="next-cover" src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SSM笔记</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NzMwMi8zMzc2Ng=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Z</div><div class="author-info__description">太美丽了</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/New-zxp"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/New-zxp" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxkk3851@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/36194738/favlist?fid=1424684538&amp;ftype=create" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MyBatisPlus"><span class="toc-number">1.</span> <span class="toc-text">MyBatisPlus</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-number">1.1.</span> <span class="toc-text">增删改查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lombok"><span class="toc-number">1.2.</span> <span class="toc-text">Lombok</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.3.</span> <span class="toc-text">多条件查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null%E5%88%A4%E5%AE%9A"><span class="toc-number">1.4.</span> <span class="toc-text">null判定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%8A%95%E5%BD%B1"><span class="toc-number">1.5.</span> <span class="toc-text">查询投影</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.6.</span> <span class="toc-text">查询条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E5%8C%B9%E9%85%8D%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="toc-number">1.7.</span> <span class="toc-text">映射匹配兼容性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#id%E7%94%9F%E6%88%90%E7%AD%96%E7%95%A5%E6%8E%A7%E5%88%B6"><span class="toc-number">1.8.</span> <span class="toc-text">id生成策略控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%EF%BC%88%E5%88%A0%E9%99%A4%E4%B8%8E%E6%9F%A5%E8%AF%A2%EF%BC%89"><span class="toc-number">1.9.</span> <span class="toc-text">多数据操作（删除与查询）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%88%A0%E9%99%A4"><span class="toc-number">1.10.</span> <span class="toc-text">逻辑删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%90%E8%A7%82%E9%94%81"><span class="toc-number">1.11.</span> <span class="toc-text">乐观锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8"><span class="toc-number">1.12.</span> <span class="toc-text">代码生成器</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/09/30/MybatisPlus/" title="MybatisPlus笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MybatisPlus笔记"/></a><div class="content"><a class="title" href="/2022/09/30/MybatisPlus/" title="MybatisPlus笔记">MybatisPlus笔记</a><time datetime="2022-09-29T16:00:00.000Z" title="发表于 2022-09-30 00:00:00">2022-09-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/21/ssm/" title="SSM笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSM笔记"/></a><div class="content"><a class="title" href="/2022/09/21/ssm/" title="SSM笔记">SSM笔记</a><time datetime="2022-09-20T16:00:00.000Z" title="发表于 2022-09-21 00:00:00">2022-09-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/20/tiktok/" title="国内安卓免拔卡使用tiktok"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="国内安卓免拔卡使用tiktok"/></a><div class="content"><a class="title" href="/2022/09/20/tiktok/" title="国内安卓免拔卡使用tiktok">国内安卓免拔卡使用tiktok</a><time datetime="2022-09-19T16:00:00.000Z" title="发表于 2022-09-20 00:00:00">2022-09-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/10/git/" title="Git笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git笔记"/></a><div class="content"><a class="title" href="/2022/09/10/git/" title="Git笔记">Git笔记</a><time datetime="2022-09-09T16:00:00.000Z" title="发表于 2022-09-10 00:00:00">2022-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/10/Web/" title="JavaWeb笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaWeb笔记"/></a><div class="content"><a class="title" href="/2022/07/10/Web/" title="JavaWeb笔记">JavaWeb笔记</a><time datetime="2022-07-09T16:00:00.000Z" title="发表于 2022-07-10 00:00:00">2022-07-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">🥰🥰🥰</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
