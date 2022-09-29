@@ -1,0 +1,468 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>JavaWeb笔记 | 土灵猪</title><meta name="keywords" content="JavaWeb"><meta name="author" content="Z"><meta name="copyright" content="Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="JavaWeb笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaWeb笔记">
+<meta property="og:url" content="https://new-zxp.github.io/2022/07/10/Web/index.html">
+<meta property="og:site_name" content="土灵猪">
+<meta property="og:description" content="JavaWeb笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg">
+<meta property="article:published_time" content="2022-07-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-09-29T13:09:21.855Z">
+<meta property="article:author" content="Z">
+<meta property="article:tag" content="JavaWeb">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://new-zxp.github.io/2022/07/10/Web/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":100},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Z","link":"链接: ","source":"来源: 土灵猪","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JavaWeb笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: false,
+  postUpdate: '2022-09-29 21:09:21'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/constown/HexoCustomFile@0.0.4/dist/css/custom.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">土灵猪</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">JavaWeb笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-09T16:00:00.000Z" title="发表于 2022-07-10 00:00:00">2022-07-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-29T13:09:21.855Z" title="更新于 2022-09-29 21:09:21">2022-09-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="JavaWeb笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>登录MySql：mysql -u用户名 -p密码 -h要连接的mysql服务器的ip地址(默认127.0.0.1) -P端口号(默认3306)</p>
+<p>单行注释：– 注释内容（注意–后边有空格）或#注释内容（MySQL特有）<br>多行注释：&#x2F;<em>注释</em>&#x2F;</p>
+<p>tinyint: 小整数型，占一个字节<br>int：大整数类型，占四个字节<br>double：浮点类型 使用格式： 字段名 double(总长度,小数点后保留的位数)<br>date：日期值。只包含年月日<br>datetime：混合日期和时间值。包含年月日时分秒<br>char：定长字符串。      优点：存储性能高 缺点：浪费空间      name char(10) 如果存储的数据字符个数不足10个，也会占10个的空间<br>varchar：变长字符串。 优点：节约空间    缺点：存储性能底   name varchar(10) 如果存储的数据字符个数不足10个，那就数据字符个数是几就占几个的空间</p>
+<p>SQL分类：</p>
+<p>DDL：数据定义语言，用来定义数据库对象：数据库，表，列等；就是用来操作数据库，表等</p>
+<p>操作数据库：<br>SHOW DATABASES：查询所有的数据库<br>CREATE DATABASE 数据库名称：创建数据库<br>CREATE DATABASE IF NOT EXISTS 数据库名称：创建数据库(判断，如果不存在则创建)<br>DROP DATABASE 数据库名称：删除数据库<br>DROP DATABASE IF EXISTS 数据库名称：删除数据库(判断，如果存在则删除)<br>USE 数据库名称：使用数据库<br>SELECT DATABASE()：查看当前使用的数据库</p>
+<p>操作表：<br>查询当前数据库下所有表名称：SHOW TABLES：<br>创建表：CREATE TABLE 表名 ( 字段名1 数据类型1, 字段名2 数据类型2, …字段名n 数据类型n );<br>查询表结构：DESC 表名称<br>删除表：DROP TABLE 表名;<br>删除表时判断表是否存在：DROP TABLE IF EXISTS 表名;<br>修改表名：ALTER TABLE 表名 RENAME TO 新的表名;<br>添加一列：ALTER TABLE 表名 ADD 列名 数据类型;<br>修改数据类型：ALTER TABLE 表名 MODIFY 列名 新数据类型;<br>修改列名和数据类型：ALTER TABLE 表名 CHANGE 列名 新列名 新数据类型;<br>删除列：ALTER TABLE 表名 DROP 列名;</p>
+<p>DML：数据操作语言，用来对数据库中表的数据进行增删改；就是对表中数据进行增删改</p>
+<p>给指定列添加数据：INSERT INTO 表名(列名1,列名2,…) VALUES(值1,值2,…);<br>给全部列添加数据：INSERT INTO 表名 VALUES(值1,值2,…);<br>批量添加数据：INSERT INTO 表名(列名1,列名2,…) VALUES(值1,值2,…)； INSERT INTO 表名 VALUES(值1,值2,…)；&#x2F;&#x2F;给所有列添加可以省略<br>修改表数据：UPDATE 表名 SET 列名1&#x3D;值1,列名2&#x3D;值2,… [WHERE 条件] ;</p>
+<p>update stu set sex &#x3D; ‘女’ where name &#x3D; ‘张三’;&#x2F;&#x2F;名字为张三时，性别改为女</p>
+<ol>
+<li>修改语句中如果不加条件，则将表中所有数据都修改！</li>
+<li>像上面的语句中的中括号，表示在写sql语句中可以省略这部分<br>删除数据：DELETE FROM 表名 [WHERE 条件] ;&#x2F;&#x2F;如果不加条件，则将表中所有数据都被删除</li>
+</ol>
+<p>DQL：数据查询语言，用来查询数据库中表的记录(数据)；就是对数据进行查询操作。从数据库表中查询到我们想要的数据。</p>
+<p>SELECT         字段列表<br>FROM           表名列表<br>WHERE         条件列表<br>GROUP BY   分组字段<br>HAVING       分组后条件<br>ORDER BY    排序字段<br>LIMIT             分页限定<br>①查询所有列的数据可以用*代替，不要使用！<br>②使用distinct修饰字段可以去除重复记录<br>③字段后加as可以给字段起别名<br>④字段后加like表示占位符 &#x2F;&#x2F;模糊查询  _ : 代表单个任意字符     % : 代表任意个数字符<br>select * from stu where name like ‘马%’; &#x2F;&#x2F;查询姓’马’的学员信息<br>select * from stu where name like ‘_花%’;&#x2F;&#x2F;查询第二个字是’花’的学员信息<br>select * from stu where name like ‘%德%’;&#x2F;&#x2F;查询名字中包含 ‘德’ 的学员信息</p>
+<p>字段排序：SELECT 字段列表 FROM 表名 ORDER BY 排序字段名1 [排序方式1],排序字段名2 [排序方式2] …;<br>①ASC ： 升序排列 （默认值） DESC ： 降序排列<br>②如果有多个排序条件，当前边的条件值一样时，才会根据第二条件进行排序</p>
+<p>聚合函数：将一列数据作为一个整体，进行纵向计算。<br>SELECT 聚合函数名(列名) FROM 表;  &#x2F;&#x2F;null 值不参与所有聚合函数运算<br>count(列名) ：统计数量<br>max(列名) ：  最大值<br>min(列名) ：  最小值<br>sum(列名) ： 求和<br>avg(列名) ： 平均值</p>
+<p>分组查询：SELECT 字段列表 FROM 表名 [WHERE 分组前条件限定] GROUP BY 分组字段名 [HAVING 分组后条件过滤];<br>&#x2F;&#x2F;分组之后，查询的字段为聚合函数和分组字段，查询其他字段无任何意义</p>
+<p>分页查询：SELECT 字段列表 FROM 表名 LIMIT 起始索引 , 查询条目数;<br>①上述语句中的起始索引是从0开始<br>②计算公式：起始索引 &#x3D; (当前页码 - 1) * 每页显示的条数<br>③limit是MySQL方言，Oracle使用rownumber,SQL Server使用top</p>
+<p>DCL：数据控制语言，用来定义数据库的访问权限和安全级别，及创建用户；就是对数据库进行权限控制。比如我让某一个数据库表只能让某一个用户进行操作等。</p>
+<p>约束：在创建表时，添加元素后面添加约束，比如id int NOT NUL UNIQUE表示非空且唯一，不需要连接符</p>
+<p>非空约束： 关键字是 NOT NULL，保证列中所有的数据不能有null值。<br>①建完表后添加：ALTER TABLE 表名 MODIFY 字段名 数据类型 NOT NULL;<br>②删除约束：ALTER TABLE 表名 MODIFY 字段名 数据类型;</p>
+<p>唯一约束： 关键字是 UNIQUE，保证列中所有数据各不相同。<br>①建完表后添加：ALTER TABLE 表名 MODIFY 字段名 数据类型 UNIQUE;<br>②删除约束：ALTER TABLE 表名 DROP INDEX 字段名;</p>
+<p>主键约束： 关键字是 PRIMARY KEY，主键是一行数据的唯一标识，要求非空且唯一。一般我们都会给每张表添加一个主键列用来唯一标识数据，例如id<br>①建完表后添加： ALTER TABLE 表名 ADD PRIMARY KEY(字段名);<br>②删除约束：ALTER TABLE 表名 DROP PRIMARY KEY;</p>
+<p>检查约束： 关键字是 CHECK，保证列中的值满足某一条件。&#x2F;&#x2F;MySQL不支持检查约束。</p>
+<p>默认约束： 关键字是 DEFAULT，保存数据时，未指定值则采用默认值。<br>①建完表后添加： ALTER TABLE 表名 ALTER 列名 SET DEFAULT 默认值;<br>②删除约束：ALTER TABLE 表名 ALTER 列名 DROP DEFAULT;</p>
+<p>自动增长： auto_increment 当列是数字类型 并且唯一约束，会随着行数自动增长</p>
+<p>外键约束： 关键字是 FOREIGN KEY，外键用来让两个表的数据之间建立链接，保证数据的一致性和完整性。<br>①创建表时添加：<br>CREATE TABLE 表名(<br>列名 数据类型,<br>…<br>[CONSTRAINT]  [外键名称] FOREIGN KEY (外键列名)  REFERENCES 主表(主表列名) );<br>②建完表后添加：ALTER TABLE 表名 ADD CONSTRAINT 外键名称 FOREIGN KEY (外键字段名称) REFERENCES 主表名称(主表列名称);<br>③删除外键约束：ALTER TABLE 表名 DROP FOREIGN KEY 外键名称;<br>④先添加主表，再添加从表</p>
+<p>多对多表关系：实现方式建立第三张中间表，中间表至少包含两个外键，分别关联两方主键<br>一对一表关系：实现方式在任意一方加入外键，关联另一方主键，并且设置外键列为唯一(UNIQUE)</p>
+<p>内连接查询：相当于查询AB交集数据  例：select * from emp , dept where emp.dep_id &#x3D; dept.did;<br>①隐式内连接 SELECT 字段列表 FROM 表1,表2… WHERE 条件;<br>②显示内连接 SELECT 字段列表 FROM 表1 [INNER] JOIN 表2 ON 条件;<br>外连接查询：<br>①左外连接查询 ：相当于查询A表所有数据和交集部门数据         SELECT 字段列表 FROM 表1 LEFT [OUTER] JOIN 表2 ON 条件;<br>②右外连接查询 ：相当于查询B表所有数据和交集部分数据         SELECT 字段列表 FROM 表1 RIGHT [OUTER] JOIN 表2 ON 条件;</p>
+<p>子查询：查询中嵌套查询，称嵌套查询为子查询。<br>①子查询语句结果是单行单列，子查询语句作为条件值，使用 &#x3D; !&#x3D; &gt; &lt; 等进行条件判断<br>例：select * from emp where salary &gt; (select salary from emp where name &#x3D; ‘猪八戒’);<br>②子查询语句结果是多行单列，子查询语句作为条件值，使用 in 等关键字进行条件判断<br>例：select * from emp where dep_id in (select did from dept where dname &#x3D; ‘财务部’ or dname &#x3D; ‘市场部’);<br>③子查询语句结果是多行多列，子查询语句作为虚拟表<br>例：select * from (select * from emp where join_date &gt; ‘2011-11-11’ ) t1, dept where t1.dep_id &#x3D; dept.did;</p>
+<p>数据库的事务：是一种机制、一个操作序列，包含了一组数据库操作命令，这一组数据库命令要么同时成功，要么同时失败。<br>①开启事务：START TRANSACTION 或者 BEGIN<br>②提交事务：commit<br>③回滚事务：rollback<br>事务的四大特征**********：<br>原子性：事务是不可分割的最小操作单位，要么同时成功，要么同时失败<br>一致性：事务完成时，必须使所有的数据都保持一致状态<br>隔离性：多个事务之间，操作的可见性<br>持久性：事务一旦提交或回滚，它对数据库中的数据的改变就是永久的</p>
+<p>JDBC<br>①获取Connect(不变)<br>&#x2F;&#x2F; 加载配置文件<br>Properties prop &#x3D; new Properties();<br>prop.load(new FileInputStream(“s-demo&#x2F;src&#x2F;druid.properties”));<br>&#x2F;&#x2F;获取连接池对象<br>DataSource dataSource &#x3D; DruidDataSourceFactory.createDataSource(prop);<br>&#x2F;&#x2F; 获取数据库连接<br>Connection conn &#x3D; dataSource.getConnection();<br>②定义SQL语句<br>③获取PreparedStatement对象(不变)         PreparedStatement pstmt &#x3D; conn.prepareStatement(sql);<br>④设置参数：需要&#x2F;不需要<br>⑤执行SQL(不变)                                        ResultSet rs &#x3D; pstmt.executeQuery();<br>⑥处理结果<br>⑦释放资源 (不变)                                      rs.close();   pstmt.close();  conn.close();&#x2F;&#x2F;增删改时没有rs</p>
+<p>DriverManager：驱动管理类<br>static void registerDriver(Driver driver)：使用DriverManager注册给定的驱动程序<br>static Connection getConnection(String url, String user, String password)：尝试建立与给定数据库URL的连接，并返回一个连接对象</p>
+<p>URL：连接路径<br>语法：jdbc:mysql:&#x2F;&#x2F;ip地址(域名):端口号&#x2F;数据库名称?参数键值对1&amp;参数键值对2…<br>示例：jdbc:mysql:&#x2F;&#x2F;127.0.0.1:3306&#x2F;db1<br>①如果连接的是本机mysql服务器，并且mysql服务默认端口是3306，则url可以简写为：jdbc:mysql:&#x2F;&#x2F;&#x2F;数据库名称?参数键值对<br>②配置 useSSL&#x3D;false 参数，禁用安全连接方式，解决警提示jdbc:mysql:&#x2F;&#x2F;db1?useSSL&#x3D;false</p>
+<p>Connection：数据库连接类            作用：获取执行 SQL 的对象和管理事务<br>①普通执行SQL对象：Statement createStatement()<br>②预编译SQL的执行SQL对象（防止SQL注入）：PreparedStatement prepareStatement(sql)<br>③执行存储过程的对象：CallableStatement prepareCall(sql)</p>
+<p>JDBC事务管理的方法：Connection接口中定义了3个对应的方法<br>①开启事务：void setAutoCommit(boolean autoCommit) &#x2F;&#x2F;true为自动提交事务；false为手动提交事务，即为开启事务<br>②提交事务：void commit()<br>③回滚事务：void rollback() &#x2F;&#x2F;try catch</p>
+<p>Statement：执行SQL语句<br>int executeUpdate(String sql)：执行DML（对表中数据进行增删改）返回值为DML影响的行数，DDL（操作数据库，表）语句<br>ResultSet executeQuery(String sql)：执行DQL（对数据进行查询）语句</p>
+<p>ResultSet结果集对象：封装了DQL查询语句的结果<br>boolean next()：将光标从当前位置向前移动一行，判断当前行是否为有效行，true ： 有效行，当前行有数据  false ： 无效行，当前行没有数据<br>xxx getXxx(参数)：获取数据 xxx : 数据类型；<br>例：int getInt(参数)    String getString(参数)    参数类型为int，代表第几列(从1开始)    参数类型为String，代表列的名称<br>例：String name &#x3D; rs.getString(2)：获取该行第二列的字符串</p>
+<p>SQL注入是通过操作输入来修改事先定义好的SQL语句，用以达到执行代码对服务器进行攻击的方法。</p>
+<p>PreparedStatement：<br>①预编译SQL语句并执行，性能更高<br>②预防SQL注入，将敏感字符进行转义<br>在url后面加上useServerPrepStmts &#x3D; true 参数开启预编译功能<br>流程：<br>①获取获取 PreparedStatement 对象<br>&#x2F;&#x2F; SQL语句中的参数值，使用?占位符替代<br>String sql &#x3D; “select * from user where username &#x3D; ? and password &#x3D; ?”;<br>&#x2F;&#x2F; 通过Connection对象获取，并传入对应的sql语句<br>PreparedStatement pstmt &#x3D; conn.prepareStatement(sql)<br>②设置?参数值<br>PreparedStatement对象：setXxx(参数1，参数2)：给 ? 赋 值<br>Xxx：数据类型 ； 如 setInt (参数1，参数2)<br>参数1： ？的位置编号，从1 开始<br>参数2： ？的值<br>③执行SQL语句                                               &#x2F;&#x2F;调用这两个方法时不需要传递SQL语句，因为获取SQL语句执行对象时已经对SQL语句进行预编译了。<br>executeUpdate(); 执行DDL语句和DML语句<br>executeQuery(); 执行DQL语句</p>
+<p>数据库连接池：数据库连接池是个容器，负责分配、管理数据库连接<br>优点：资源重用，提升系统响应速度，避免数据库连接遗漏</p>
+<p>DataSource：数据库连接池标准接口<br>该接口提供了获取连接的功能：Connection getConnection()<br>常见的数据库连接池：DBCP，C3P0，Druid（常用）</p>
+<p>System.out.println(System.getProperty(“user.dir”)) ：找到当前绝对路径</p>
+<p>Maven：是专门用于管理和构建Java项目的工具<br>①提供了一套标准化的项目结构<br>②提供了一套标准化的构建流程（编译，测试，打包，发布……）<br>③提供了一套依赖管理机制<br>常用命令：<br>compile ：编译<br>clean：清理<br>test：测试<br>package：打包<br>install：安装jar包到仓库</p>
+<p>Maven 中的坐标是资源的唯一标识，使用坐标来定义项目或引入项目中需要的依赖<br>Maven 坐标主要组成：<br>①groupId：定义当前Maven项目隶属组织名称（通常是域名反写，例如：com.itheima）<br>②artifactId：定义当前Maven项目名称（通常是模块名称，例如 order-service、goods-service）<br>③version：定义当前项目版本号</p>
+<p>创建maven项目一定要先配置maven仓库</p>
+<p>Maven项目导入：导入pom文件即可<br>导入jar包：<dependencies> → <dependency>        如果报错右上角下载<br>想要移除jar包或者添加jar包，要右上角刷新后才能生效<br>alt + insert：选择dependcy快速搜索已经下载的jar包</p>
+<p>依赖范围：依赖通过 scope 标签指定依赖的作用范围<br>①compile ：作用于编译环境、测试环境、运行环境<br>②test ： 作用于测试环境。典型的就是Junit坐标，以后使用Junit时，都会将scope指定为该值<br>③provided ：作用于编译环境、测试环境。我们后面会学习 servlet-api ，在使用它时，必须将 scope 设置为该值，不然运行时就会报错<br>④runtime ： 作用于测试环境、运行环境。jdbc驱动一般将 scope 设置为该值，当然不设置也没有任何问题<br>如果引入坐标不指定 scope 标签时，默认就是 compile 值。以后大部分jar包都是使用默认值。</p>
+<p>Mybatis：MyBatis 是一款优秀的持久层框架，用于简化 JDBC 开发<br>持久层：负责将数据到保存到数据库的那一层代码。</p>
+<p>调用Mybatis完成sql语句：<br>①获取SqlSessionFactory对象<br>②获取SqlSession对象<br>③获取Mapper<br>④调用方法<br>⑤释放资源</p>
+<p>创建SqlSessionFactoryUtils工具类：<br>①定义SqlSessionFactory sqlSessionFactory成员变量<br>②用静态代码块的形式存放这三行代码，这样sql工厂的创建只随着类的加载自动创建一次，且只执行一次<br>String resource &#x3D; “mybatis-config.xml”;<br>InputStream inputStream &#x3D; Resources.getResourceAsStream(resource);<br>sqlSessionFactory &#x3D; new SqlSessionFactoryBuilder().build(inputStream);<br>③在方法中返回sql工厂对象</p>
+<p>Mapper代理开发：<br>①定义返回值对象类，如User类<br>②定义与SQL映射文件同名的Mapper接口（如UserMapper），并将Mapper接口与SQL映射文件(UserMapper.xml)放置在同一目录<br>在resource文件下新建一个com&#x2F;zxp&#x2F;mapper，把SQL映射文件放进去，这样SQL映射文件就和Mapper在同一个目录下<br>③设置SQL映射文件的namespace属性为Mapper接口全限定名，namespace &#x3D; com.zxp.mapper.UserMapper<br>④在Mapper接口中定义方法，方法名就是SQL映射文件sql语句的id，并保持参数类型和返回值类型一致<br>⑤在mybatis-config中重新加载sql映射文件，把原来的mapper resource替换成<package name = "com.zxp.mapper"/>，把所有映射文件的目录传进去<br>⑥主体代码（见文件）</p>
+<p>可以在sql映射文件中给字段进行映射：在sql文件中<resultMap>,id为唯一标识，type为类所在位置。<br>在内部，id为主键字段，result为一般字段映射，column为表的列名，property为实体类的属性名<br><result column="brand_name" property="brandName"/><br>然后把下边的resultType换成resultMap &#x3D; 前边定义的唯一标识</p>
+<p>参数占位符：<br>#{ }：将sql语句中对应位置替换为?，为了防止sql注入，里边最好填对应参数的名称<br>￥{ }：拼sql，会存在sql注入问题</p>
+<p>特殊字符处理：<br>转义字符：小于：”&lt;”   大于：”&gt;”<br>CDATA区：输入CD在里边写符号</p>
+<p>多条件查询：(like后的%在service中拼接)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;selectByCondition&quot;</span> <span class="attr">resultMap</span>=<span class="string">&quot;brandResultMap&quot;</span>&gt;</span></span><br><span class="line">        select *</span><br><span class="line">        from tb_brand</span><br><span class="line">        where status = #&#123;status&#125;</span><br><span class="line">          and company_name like #&#123;companyName&#125;</span><br><span class="line">          and brand_name like #&#123;brandName&#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>①List<Brand> selectByCondition(@Param(“status”)int status,@Param(“companyName”) String companyName,@Param(“brandName”) String brandName);&#x2F;&#x2F;括号里的名称与参数占位符里的名称一致<br>给参数加上注释，注释的名称应该与占位参数名称一致<br>②List<Brand> selectByCondition(Brand brand);<br>把参数封装成一个对象，把参数传给该对象</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">select *</span><br><span class="line">       from tb_brand</span><br><span class="line">       <span class="tag">&lt;<span class="name">where</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;status != null&quot;</span>&gt;</span></span><br><span class="line">               and status = #&#123;brand.status&#125;</span><br><span class="line">           <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span></span><br><span class="line">               and company_name like #&#123;brand.companyName&#125;</span><br><span class="line">           <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;brandName != null and brandName != &#x27;&#x27; &quot;</span>&gt;</span></span><br><span class="line">               and brand_name like #&#123;brand.brandName&#125;</span><br><span class="line">           <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">where</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>③List<Brand> selectByCondition(Map map);<br>把参数名称和参数传递到哈希表中，把map对象传给方法</p>
+<p>动态sql查询：<br>①if：注意test后边的参数名要和你传入的参数名一致，</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">where</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span></span><br><span class="line">            and company_name like #&#123;companyName&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;brandName != null and brandName != &#x27;&#x27; &quot;</span>&gt;</span></span><br><span class="line">            and brand_name like #&#123;brandName&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">where</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>②加上where标签可以防止and字符报错<br>③choose（when,otherwise）：选择，类似于switch语句</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">choose</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">when</span> <span class="attr">test</span>=<span class="string">&quot;brandName != null and brandName != &#x27;&#x27; &quot;</span>&gt;</span></span><br><span class="line">   brand_name like #&#123;brandName&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">when</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">otherwise</span>&gt;</span> 1=1 <span class="tag">&lt;/<span class="name">otherwise</span>&gt;</span><span class="comment">&lt;!--可以把otherwise替换成when标签--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">choose</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>使用java进行sql添加功能时</strong><br>①要手动提交事务sqlSession.commit<br>②SqlSession sqlSession &#x3D; sqlSessionFactory.openSession(true);打开自动提交（关闭事务）<br>③<insert id="add" useGeneratedKeys="true" keyProperty="id">&#x2F;&#x2F;这样添加的信息就可以访问主键了</p>
+<p>批量删除sql：参数加@Param注释，否则collection默认应该为array，separator为连接符，open&#x3D;”(“：开始拼一个（</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">delete</span> <span class="attr">id</span>=<span class="string">&quot;deleteById&quot;</span>&gt;</span></span><br><span class="line">        delete from tb_brand where id</span><br><span class="line">        in(<span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">&quot;ids&quot;</span> <span class="attr">item</span>=<span class="string">&quot;id&quot;</span> <span class="attr">separator</span>=<span class="string">&quot;,&quot;</span>&gt;</span></span><br><span class="line">            #&#123;id&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span> );</span><br><span class="line"><span class="tag">&lt;/<span class="name">delete</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>W3C标准：网页主要由结构：HTML，表现：CSS，行为：JavaScript</p>
+<p>JavaScript</p>
+<p>JavaScript 引入方式（HTML 和 JavaScript 的结合方式）有两种：</p>
+<p>内部脚本：将 JS代码定义在HTML页面中<br>①在 HTML 中，JavaScript 代码必须位于 <script> 与 </script> 标签之间<br>②一般把脚本置于元素的底部，可改善显示速度因为浏览器在加载页面的时候会从上往下进行加载并解析。 我们应该让用户看到页面内容，然后再展示动态的效果</p>
+<p>外部脚本：将 JS代码定义在外部 JS文件中，然后引入到 HTML页面中<br>①定义外部 js 文件，如定义名为 demo.js的文件<br>②在页面中引入外部的js文件<br>③在页面使用 script 标签中使用 src 属性指定 js 文件的 URL 路径。<br>④外部脚本不能包含 <script> 标签：在js文件中直接写 js 代码即可，不要在 js文件中写 script 标签<br>⑤<script> 标签不能自闭合，在页面中引入外部js文件时，不能写成 <script src="../js/demo.js" /> 。</p>
+<p>JavaScript书写语法<br>①区分大小写：与 Java 一样，变量名、函数名以及其他一切东西都是区分大小写的<br>②每行结尾的分号可有可无<br>③如果一行上写多个语句时，必须加分号用来区分多个语句。<br>④注释：<br>单行注释：// 注释内容<br>多行注释：/* 注释内容 */<br>JavaScript 没有文档注释</p>
+<p>输出语句：<br>①使用 window.alert() 写入警告框<br>②使用 document.write() 写入 HTML 输出<br>③使用 console.log() 写入浏览器控制台</p>
+<p>变量：JavaScript 中用 var 关键字（variable 的缩写）来声明变量。<br>格式 var 变量名 = 数据值<br>JavaScript 是一门弱类型语言，变量可以存放不同类型的值</p>
+<p>var关键字：<br>①作用域：全局变量<br>②变量可以重复定义<br>③let 关键字定义变量,它的用法类似于 var ，但是所声明的变量，只在 let 关键字所在的代码块内有效，且不允许重复声明。<br>④const关键字，用来声明一个只读的常量，一旦声明，常量的值就不能改变。</p>
+<p>数据类型：原始类型和引用类型</p>
+<p>原始数据类型：<br>①number：数字（整数、小数、NaN(Not a Number)）<br>②string：字符、字符串，单双引皆可<br>③boolean：布尔。true，false<br>④null：对象为空<br>⑤undefined：当声明的变量未初始化时，该变量的默认值是 undefined<br>⑥使用typeof运算符可以获取数据类型</p>
+<p>== 和 === 区别：<br>==：</p>
+<ol>
+<li>判断类型是否一样，如果不一样，则进行类型转换</li>
+<li>再去比较其值<br>===：js 中的全等于</li>
+<li>判断类型是否一样，如果不一样，直接返回false</li>
+<li>再去比较其值</li>
+</ol>
+<p>类型转换：</p>
+<p>string 转换为 number 类型：按照字符串的字面值，转为数字。如果字面值不是数字，则转为NaN<br>①使用 + 正号运算符<br>②使用 parseInt() 函数(方法)</p>
+<p>boolean 转换为 number 类型：true 转为1，false转为0</p>
+<p>number 类型转换为 boolean 类型：0和NaN转为false，其他的数字转为true<br>string 类型转换为 boolean 类型：空字符串转为false，其他的字符串转为true<br>null类型转换为 boolean 类型是 false<br>undefined 转换为 boolean 类型是false</p>
+<p>函数：是被设计为执行特定任务的代码块；JavaScript 函数通过 function 关键词进行定义<br>①function 函数名(参数1,参数2..){ 要执行的代码 }<br>②var 函数名 = function (参数列表){ 要执行的代码 }<br>③形式参数不需要类型。因为JavaScript是弱类型语言<br>④返回值也不需要定义类型，可以在函数内部直接使用return返回即可</p>
+<p>JavaScript Array对象用于定义数组:<br>①var 变量名 = new Array(元素列表);<br>②var 变量名 = [元素列表];<br>③JavaScript 中数组的长度是可以变化的， JavaScript 是弱类型，所以可以存储任意类型的数据。</p>
+<p>String：trim方法可以去除字符串的空白部分</p>
+<p>自定义对象：<br>var 对象名称 = {<br>属性名称1:属性值1, 属性名称2:属性值2, ...,<br>函数名称:function (形参列表){},<br>... };</p>
+<p>BOM：Browser Object Model 浏览器对象模型<br>①JavaScript 将浏览器的各个组成部分封装为对象<br>②Window：浏览器窗口对象<br>③Navigator：浏览器对象<br>④Screen：屏幕对象<br>⑤History：历史记录对象<br>⑥Location：地址栏对象</p>
+<p>Window：浏览器窗口对象<br>方法：<br>alert()：显示带有一段消息和一个确认按钮的警告框<br>confirm()：显示带有一段消息一级确认按钮和取消按钮的对话框<br>setInterval(function,毫秒值)：按照指定的周期（以毫秒计）来调用函数或计算表达式<br>setTimeout(function,毫秒值 )：在指定的毫秒数后调用函数或计算表达式</p>
+<p>History：历史记录对象<br>获取：使用window.history.方法()        window可以省略<br>方法：<br>back()：加载history列表中的上一个URL<br>forward()：加载history列表中的下一个URL</p>
+<p>Location：地址栏对象<br>获取：window.location.方法()     window可以省略<br>属性：<br>href：设置或返回完整的URL</p>
+<p>DOM：Document Object Model 文档对象模型。<br>①JavaScript 将 HTML 文档的各个组成部分封装为对象<br>②Document：整个文档对象<br>③Element：元素对象<br>④Attribute：属性对象<br>⑤Text：文本对象<br>⑥Comment：注释对象<br>作用：<br>①JavaScript 通过 DOM， 就能够对 HTML进行操作了<br>②改变 HTML 元素的内容<br>③改变 HTML 元素的样式（CSS） 对 HTML DOM 事件作出反应<br>④添加和删除 HTML 元素</p>
+<p>Element：HTML 中的 Element 对象可以通过 Document 对象获取，而 Document 对象是通过 window 对象获取。<br>Document 对象中提供了以下获取 Element 元素对象的函数：<br>getElementById() ：根据id属性值获取，返回单个Element对象<br>getElementsByTagName() ：根据标签名称获取，返回Element对象数组<br>getElementsByName() ：根据name属性值获取，返回Element对象数组<br>getElementsByClassName() ：根据class属性值获取，返回Element对象数组<br>style：设置元素css样式<br>innerHTML：设置元素内容<br>checked：使所有的复选框呈现被选中的状态</p>
+<p>事件：是发生在 HTML 元素上的“事情，比如：页面上的按钮被点击，鼠标移动到元素之上 ，按下键盘按键 等都是事件<br>事件监听：是JavaScript 可以在事件被侦测到时执行一段逻辑代码</p>
+<p>事件绑定<br>①通过 HTML标签中的事件属性进行绑定<br><input type="button" onclick='on()'><br>function on(){ alert("我被点了"); }<br>②通过 DOM 元素属性绑定<br><input type="button" id="btn"><br>document.getElementById("btn").onclick = function (){ alert("我被点了"); }</p>
+<p>常见事件：<br>onclick 鼠标单击事件<br>onblur 元素失去焦点<br>onfocus 元素获得焦点<br>onload 某个页面或图像被完成加载<br>onsubmit 当表单提交时触发该事件<br>onmouseover 鼠标被移到某元素之上<br>onmouseout 鼠标从某元素移开</p>
+<p>正则表达式：<br>^：表示开始<br>$：表示结束<br>[ ]：代表某个范围内的单个字符，比如： [0-9] 单个数字字符<br>.：代表任意单个字符，除了换行和行结束符<br>\w：代表单词字符：字母、数字、下划线()，相当于 [A-Za-z0-9]<br>\d：代表数字字符： 相当于 [0-9]<br>量词：<br>+：至少一个<br>*：零个或多个<br>？：零个或一个<br>{x}：x个<br>{m,}：至少m个<br>{m,n}：至少m个，最多n个</p>
+<p>正则对象创建方式：<br>直接量方式：var reg = /正则表达式/                 /^\w{6,12}$/<br>创建 RegExp 对象：var reg = new RegExp("正则表达式")</p>
+<p>HTTP：超文本传输协议，规定了浏览器和服务器之间数据传输的规则<br>特点：<br>①基于TCP协议：面向连接，安全<br>②基于请求-响应模型的：一次请求对应一次响应，  请求和响应是一 一对应关系<br>③HTTP协议是无状态协议：对于事物处理没有记忆能力，每次请求-响应都是独立的<br>无状态指的是客户端发送HTTP请求给服务端之后，服务端根据请求响应数据，响应完后，不会记录任何信息，这种特性有优点也有缺点<br>优点：速度快<br>缺点：多次请求间不能共享数据</p>
+<p>HTTP请求数据格式：</p>
+<p>请求行：请求数据的第一行，包含三部分，请求方式，请求URL路径，HTTP协议及版本<br>①请求方式<br>②/表示请求资源路径<br>③HTTP/1.1表示协议版本</p>
+<p>请求头：第二行开始，格式为key: value形式<br>常见的请求头<br>①Host: 表示请求的主机名<br>②User-Agent: 浏览器版本,例如Chrome浏览器的标识类似Mozilla/5.0 ...Chrome/79，IE浏览器的标识类似Mozilla/5.0 (Windows NT ...)like Gecko；<br>③Accept：表示浏览器能接收的资源类型，如text/*，image/<em>或者</em>/*表示所有；<br>④Accept-Language：表示浏览器偏好的语言，服务器可以据此返回不同语言的网页；<br>⑤Accept-Encoding：表示浏览器可以支持的压缩类型，例如gzip, deflate等。</p>
+<p>请求体（和请求头之间空一行）：POST请求的最后一行，存放请求参数</p>
+<p>GET和POST请求之间的区别：<br>①GET请求请求参数在请求行中，没有请求体，POST请求请求参数在请求体中<br>②GET请求请求参数大小有限制，POST没有</p>
+<p>HTTP响应数据格式：</p>
+<p>响应行：响应数据的第一行，响应行包含三块内容，HTTP协议及版本，响应状态码，状态码的描述<br>①HTTP/1.1[HTTP协议及版本]<br>②200[响应状态码]<br>③ok[状态码的描述]</p>
+<p>响应头：第二行开始，格式为key：value<br>HTTP常见响应头<br>①Content-Type：表示该响应内容的类型，例如text/html，image/jpeg；<br>②Content-Length：表示该响应内容的长度（字节数）；<br>③Content-Encoding：表示该响应压缩算法，例如gzip；<br>④Cache-Control：指示客户端应如何缓存，例如max-age=300表示可以最多缓存300秒</p>
+<p>响应体：最后一部分，存放响应数据</p>
+<p>状态码分类：<br>1xx：响应中，表示请求已经接受，告诉客户端应该继续请求或者如果已经完成则忽略他<br>2xx：成功，表示请求已经被成功接受，处理已完成<br>3xx：重定向，重定向到其他地方：它让客户端再发送一个请求以完成整个处理<br>4xx：客户端错误，处理发生错误，责任在客户端，如：客户端请求一个不存在的资源，客户端未被授权，禁止访问等<br>5xx：服务器端错误，处理发生错误，责任在服务器，如服务器抛出异常，路由错误，HTTP版本不支持等</p>
+<p>Tomcat部署项目：将项目放置到webapps目录下，即部署完成，一般项目会被打成war包，放在webapps目录下会被自动解压</p>
+<p>Maven Web项目结构：<br>webapp：Web项目特有目录<br>webapp子目录：<br>①html：HTML文件目录（可自定义）<br>②WEB-INF：Web项目核心目录（必须叫这个名字）<br>WEB-INF子文件：web.xml（Web项目配置文件）</p>
+<p>Servlet：Java提供的一门动态web资源开发技术，是JavaEE规范之一，也就是接口</p>
+<p>Servlet快速入门<br>①创建web项目，导入Servlet依赖坐标<br>②创建一个类，实现Servlet接口，重写所有方法，并在service方法中输入一句话<br>③配置:在类上使用@WebServlet注解（属性名称为value且只有一个属性时，value可以省略），配置该Servlet的访问路径<br>④访问:启动Tomcat,浏览器中输入URL地址访问该Servlet<br>⑤访问后，在控制台会打印service方法的话，说明servlet程序已经成功运行。</p>
+<p>Servlet运行在Servlet容器(web服务器)中，其生命周期由容器来管理，分为4个阶段：<br>①加载和实例化：默认情况下（当配置loadOnStartup(默认为负整数)= 0或正整数时，服务器启动时创建Servlet对象，数字越小优先级越高），当Servlet第一次被访问时，由容器创建Servlet对象<br>②初始化：在Servlet实例化之后，容器将调用Servlet的init()方法初始化这个对象，完成一些如加载配置文件、创建连接等初始化的工作，该方法只调用一次<br>③请求处理：每次请求Servlet时，Servlet容器都会调用Servlet的service()方法对请求进行处理<br>④服务终止：当需要释放内存或者容器关闭时，容器就会调用Servlet实例的destroy()方法完成资源的释放。在destroy()方法调用之后，容器会释放这个Servlet实例，该实例随后会被Java的垃圾收集器所回收</p>
+<p>urlPattern配置：Servlet类访问路径（@WebServlet(urlPatterns = {"/demo7","/demo8"})）<br>①一个Servlet可以配置多个访问路径<br>②精确匹配：@WebServlet(urlPatterns = "/user/select")<br>③目录匹配：@WebServlet(urlPatterns = "/user/*")<br>③扩展名匹配：@WebServlet(urlPatterns = "  * . do   ")<br>④任意匹配（不要使用）：@WebServlet(“/”）或@WebServlet(“/*”）</p>
+<p>Request的继承体系：<br>ServletRequest：Java提供的请求对象根接口<br>HttpServletRequest：Java提供的对Http协议封装的请求对象接口<br>RequestFacade：Tomcat定义的实现类</p>
+<p>HttpServletRequest：Java提供的对Http协议封装的请求对象接口：<br>请求行：<br>String getMethod()：获取请求方式: GET<br>String getContextPath()：获取虚拟目录(项目访问路径): /request-demo<br>StringBuffer getRequestURL()：获取URL(统一资源定位符): <a target="_blank" rel="noopener" href="http://localhost:8080/request-demo/req1">http://localhost:8080/request-demo/req1</a><br>String getRequestURI()：获取URI(统一资源标识符): /request-demo/req1<br>String getQueryString()：获取请求参数(GET方式): username=zhangsan&password=123</p>
+<p>请求头：<br>String getHeader(String name)：根据请求头名称获取对应值的方法</p>
+<p>请求体（post方法）<br>ServletInputStream getInputStream()：取字节输入流，如果前端发送的是字节数据，比如传递的是文件数据，则使用该方法<br>BufferedReader getReader()：获取字符输入流，如果前端发送的是纯文本数据，则使用该方法（不需要手动关闭）</p>
+<p>Request将获取请求参数的方法进行了封装：<br>Map<String,String[]> getParameterMap()：获取所有参数Map集合<br>String[] getParameterValues(String name)：根据名称获取参数值（数组）<br>String getParameter(String name)：根据名称获取参数值(单个值)</p>
+<p>post解决中文乱码问题：<br>setCharacterEncoding("UTF-8")：设置字符输入流的编码</p>
+<p>get解决中文乱码问题：<br>byte[] bytes = username.getBytes(StandardCharsets.ISO_8859_1);<br>username = new String(bytes,StandardCharsets.UTF_8)</p>
+<p>Request请求转发：<br>request.getRequsetDispatcher("path").forward(request,response)：请求转发<br>void setAttribute(String name,Object o)：存储数据到request域<br>Object getAttribute(String name)：根据key获取值<br>void removeAttribute(String name)：根据key删除该键值对</p>
+<p>Response:设置响应数据</p>
+<p>Reponse的继承体系：<br>ServletReponse：Java提供的请求对象根接口<br>HttpServletReponse：Java提供的对Http协议封装的请求对象接口<br>RequestReponse：Tomcat定义的实现类</p>
+<p>响应行：<br>void setStatus(int sc)：设置响应状态码<br>响应头：<br>void setHeader(String name,String value)：设置响应头键值对<br>响应体：<br>PrintWriter getWriter()：获取字符输出流<br>ServletOutputStream getOutputStream()：获取字节输出流</p>
+<p>Response完成重定向：<br>①response.setStatus(302)：设置响应状态码302<br>②response.setHeader("location","资源B的访问路径")<br>简化方式完成重定向：response.sendRedirect("location","资源B的访问路径")</p>
+<p>重定向的特点:<br>①浏览器地址栏路径发送变化<br>②可以重定向到任何位置的资源(服务内容、外部均可)<br>③两次请求，不能在多个资源使用request共享数据</p>
+<p>①请求转发的特点<br>②浏览器地址栏路径不发生变化<br>③只能转发到当前服务器的内部资源<br>④一次请求，可以在转发资源间使用request共享数据</p>
+<p>Response响应字符数据<br>①PrintWriter writer = resp.getWriter()<br>②response.setHeader("content-type","text/html")    //以html文本的形式响应<br>③writer.write("<h1>aaa</h1>")</p>
+<p>响应数据包含中文时：<br>①response.setContentType（"text/html"；"charset=utf-8"）<br>②PrintWriter writer = resp.getWriter()<br>③writer.write("")</p>
+<p>Response响应字节数据：<br>①通过Response对象获取字节输出流：ServletOutputStream outputStream = resp.getOutputStream()<br>②通过字节输出流写数据: outputStream.write(字节数据)</p>
+<p>路径问题：<br>浏览器使用：需要加虚拟目录(项目访问路径)<br>服务端使用：不需要加虚拟目录</p>
+<p>Cookie：客户端会话技术，将数据保存到客户端（浏览器），以后每次请求都携带Cookie数据进行访问。</p>
+<p>发送Cookie<br>①创建Cookie对象，并设置数据<br>Cookie cookie = new Cookie("key","value");<br>②发送Cookie到客户端：使用response对象<br>response.addCookie(cookie)</p>
+<p>获取Cookie<br>①获取客户端携带的所有Cookie，使用request对象<br>Cookie[] cookies = request.getCookies();<br>②遍历数组，获取每一个Cookie对象：for each<br>③使用Cookie对象方法获取数据<br>cookie.getName();<br>cookie.getValue();</p>
+<p>Cookie的原理：Cookie的实现原理是基于HTTP协议的<br>发送Cookie：响应头：set-cookie<br>获取Cookie：请求头: cookie</p>
+<p>Cookie的存活时间：<br>①默认情况下，Cookie存储在浏览器内存中，当浏览器关闭，内存释放，则Cookie被销毁<br>②setMaxAge(int seconds)：设置Cookie存活时间<br>正数：将Cookie写入浏览器所在电脑的硬盘，持久化存储。到时间自动删除<br>负数：默认值，Cookie在当前浏览器内存中，当浏览器关闭，则Cookie被销毁<br>零：删除对应Cookie</p>
+<p>Cookie存储中文：<br>①String value = "张三"；<br>②对中文进行URL编码：对中文进行URL编码  value = URLEncoder.encode(value, "UTF-8");<br>③将编码后的值存入Cookie中：Cookie cookie = new Cookie("username",value);<br>④获取Cookie数组：Cookie[] cookies = request.getCookies();<br>⑤String value = cookie.getValue()；<br>⑥URL解码 value = URLDecoder.decode(value,"UTF-8");</p>
+<p>Session：服务端会话跟踪技术：将数据保存到服务端</p>
+<p>Session的基本使用：获取Session对象,使用的是HttpServletRequest对象：HttpSession session = request.getSession();<br>Session对象提供的功能:<br>①void setAttribute(String name, Object o)：存储数据到 session 域中<br>②Object getAttribute(String name)：根据 key，获取值<br>③void removeAttribute(String name)：根据 key，删除该键值对</p>
+<p>Session的原理：Session是基于Cookie实现的</p>
+<p>Session钝化与活化<br>钝化：在服务器正常关闭后，Tomcat会自动将Session数据写入硬盘的文件中<br>活化：再次启动服务器后，从文件中加载数据到Session中</p>
+<p>session的销毁会有两种方式:<br>①默认情况下，无操作，30分钟自动销毁<br>在web.xml中配置销毁时间，单位为分钟<br><session-config> <session-timeout>100</session-timeout> </session-config><br>②调用Session对象的invalidate()进行销毁</p>
+<p>Cookie和Session区别<br>存储位置：Cookie 是将数据存储在客户端，Session 将数据存储在服务端<br>安全性：Cookie不安全，Session安全<br>数据大小：Cookie最大3KB，Session无大小限制<br>存储时间：Cookie可以通过setMaxAge()长期存储，Session默认30分钟<br>服务器性能：Cookie不占服务器资源，Session占用服务器资源</p>
+<p>MavenWeb项目创建：<br>①新建Maven模块，创建时选择maven-archetype-webapp<br>②选择maven对应的文件夹和仓库<br>③把poml文件按照电脑里的修改<br>④新建java和resource文件夹</p>
+<p>Filter 表示过滤器，是 JavaWeb 三大组件(Servlet、Filter、Listener)之一<br>①过滤器可以把对资源的请求拦截下来，从而实现一些特殊的功能<br>②过滤器一般完成一些通用的操作<br>③实现权限控制</p>
+<p>Filter开发步骤：<br>①定义类，实现 Filter接口，并重写其所有方法<br>②配置Filter拦截资源的路径：在类上定义 @WebFilter 注解。而注解的 value 属性值 /* 表示拦截所有的资源<br>③在doFilter方法中输出一句话，并放行</p>
+<p>Filter执行流程:<br>①执行放行前逻辑（对request数据进行处理）<br>②放行<br>③访问资源<br>④执行放行后逻辑（对response数据进行处理）</p>
+<p>Filter拦截路径配置：<br>①拦截具体的资源：/index.jsp：只有访问index.jsp时才会被拦截<br>②目录拦截：/user/<em>：访问/user下的所有资源，都会被拦截<br>③后缀名拦截：</em>.jsp：访问后缀名为jsp的资源，都会被拦截<br>④拦截所有：/*：访问所有资源，都会被拦截</p>
+<p>Listener 表示监听器，是 JavaWeb 三大组件(Servlet、Filter、Listener)之一<br>①监听器是在 application ， session ， request 三个对象创建、销毁或者往其中添加修改删除属性时自动执行代码的功能组件<br>②application 是 ServletContext 类型的对象<br>③ServletContext 代表整个web应用，在服务器启动的时候，tomcat会自动创建该对象。在服务器关闭时会自动销毁该对象<br>使用方法：<br>①定义类，实现接口<br>②在类上添加@WebListener注解</p>
+<p>AJAX：异步的 JavaScript 和 XML<br>①与服务器进行数据交换：通过AJAX可以给服务器发送请求，服务器将数据直接响应回给浏览器<br>②使用AJAX和服务器进行通信，以达到使用 HTML+AJAX来替换JSP页面<br>③异步交互：可以在不重新加载整个页面的情况下，与服务器交换数据并更新部分网页的技术，如：搜索联想、用户名是否可用校验</p>
+<p>Axios：对原生的AJAX进行封装，简化书写<br>①导入js文件并在html中引入：<script src="js/axios-0.18.0.js"></script> 1<br>②发送 get 请求<br>axios({<br>method:”get”,<br>url:”<a target="_blank" rel="noopener" href="http://localhost:8080/ajax-demo1/aJAXDemo1?username=zhangsan&quot;">http://localhost:8080/ajax-demo1/aJAXDemo1?username=zhangsan&quot;</a><br>}).then(function (resp){<br>alert(resp.data); })<br>②发送 post 请求<br>axios({<br>method:”post”,<br>url:”<a target="_blank" rel="noopener" href="http://localhost:8080/ajax-demo1/aJAXDemo1&quot;">http://localhost:8080/ajax-demo1/aJAXDemo1&quot;</a>,<br>data:”username&#x3D;zhangsan”<br>}).then(function (resp){<br>alert(resp.data); });</p>
+<p>method 属性：用来设置请求方式的。取值为 get 或者 post<br>url 属性：用来书写请求的资源路径。如果是 get 请求，需要将请求参数拼接到路径的后面，格式为： url?参数名&#x3D;参 数值&amp;参数名2&#x3D;参数值2<br>data 属性：作为请求体被发送的数据。也就是说如果是 post 请求的话，数据需要作为 data 属性的值。<br>then() 需要传递一个匿名函数。我们将 then() 中传递的匿名函数称为 回调函数，意思是该匿名函数在发送请求时不会被调用，而是在成功响应后调用的函数。<br>该回调函数中的 resp 参数是对响应的数据进行封装的对象，通过 resp.data 可以获取到响应的数据</p>
+<p>axios.get(“<a target="_blank" rel="noopener" href="http://localhost:8080/ajax-demo/axiosServlet?username=zhangsan&quot;">http://localhost:8080/ajax-demo/axiosServlet?username=zhangsan&quot;</a>)<br>.then(function (resp) {<br>alert(resp.data); });</p>
+<p>axios.post(“<a target="_blank" rel="noopener" href="http://localhost:8080/ajax-demo/axiosServlet&quot;,&quot;username=zhangsan&quot;">http://localhost:8080/ajax-demo/axiosServlet&quot;,&quot;username=zhangsan&quot;</a>)<br>.then(function (resp) {<br>alert(resp.data); })</p>
+<p>JSON：JavaScript Object Notation，JavaScript 对象表示法<br>作用：由于其语法格式简单，层次结构鲜明，现多用于作为数据载体，在网络中进行数据传输。<br>格式：var 变量名 &#x3D; {“key”:value,”key”:value,…};<br>JSON 串的键要求必须使用双引号括起来，而值根据要表示的类型确定。</p>
+<p>value 的数据类型分为如下:<br>数字（整数或浮点数）<br>字符串（使用双引号括起来）<br>逻辑值（true或者false）<br>数组（在方括号中）[]<br>对象（在花括号中）{}<br>null</p>
+<p>Fastjson 可以实现 Java 对象和 JSON 字符串的相互转换。<br>①导入坐标</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>fastjson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.62<span class="tag">&lt;/<span class="name">version</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">②Java对象转JSON：String jsonStr = JSON.toJSONString(user)</span><br><span class="line">③JSON字符串转Java对象：User user = JSON.parseObject(jsonStr, User.class)</span><br></pre></td></tr></table></figure>
+
+<p>Vue 是一套前端框架，免除原生JavaScript中的DOM操作，简化书写。<br>①新建 HTML 页面，引入Vue.js文件：<script src="js/vue.js"></script><br>②在JS代码区域，创建Vue核心对象，进行数据绑定<br>new Vue({<br>el: “#app”,<br>data() {<br>return {<br>username: “” &#x2F;&#x2F;模型数据<br>} } });<br>el：用来指定哪儿些标签受 Vue 管理。 该属性取值 #app 中的 app 需要是受管理的标签的id属性值<br>data：用来定义数据模型<br>methods：用来定义函数。这个我们在后面就会用到<br>③编写视图（报错时考虑将③放在②上边）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span>  <span class="attr">v-model</span>=<span class="string">&quot;username&quot;</span> &gt;</span> </span><br><span class="line">&#123;&#123;username&#125;&#125;     //&#123;&#123;&#125;&#125; 是 Vue 中定义的插值表达式 ，在里面写数据模型，到时候会将该模型的数据值展示在这个位置。</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>Vue 指令：<br>v-bind：为HTML标签绑定属性值，如设置 href , css样式等<br>v-model：在表单元素上创建双向数据绑定<br>v-on：为HTML标签绑定事件<br>v-if：条件性的渲染某元素，判定为true时渲染,否则不渲染<br>v-else：条件性的渲染某元素，判定为true时渲染,否则不渲染<br>v-else-if：条件性的渲染某元素，判定为true时渲染,否则不渲染<br>v-show：根据条件展示某元素，区别在于切换的是display属性的值<br>v-for：列表渲染，遍历容器的元素或者对象的属性</p>
+<p>Vue生命周期的八个阶段：每触发一个生命周期事件，会自动执行一个生命周期方法，这些生命周期方法也被称为钩子方法。<br>beforeCreate：创建前<br>created：创建后<br>beforeMount：载入前<br>mounted：挂载完成<br>beforeUpdate：更新前<br>updated：更新后<br>beforeDestory：销毁前<br>destoryed：销毁后</p>
+<p>mounted：挂载完成，Vue初始化成功，HTML页面渲染成功<br>new Vue({<br>el:”#app”,<br>mouted(){<br>alert(“vue挂载完成，发送异步请求”);<br>}});</p>
+<p>Element：是饿了么公司前端开发团队提供的一套基于 Vue 的网站组件库，用于快速构建网页。<br>①将element-ui文件夹拷贝到webapp目录下<br>②创建页面，并在页面引入Element 的css、js文件 和 Vue.js</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;js/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;element-ui/lib/index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;element-ui/lib/theme-chalk/index.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>③创建Vue核心对象</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"> </span></span><br><span class="line"><span class="language-javascript"><span class="keyword">new</span> <span class="title class_">Vue</span>(&#123; </span></span><br><span class="line"><span class="language-javascript"><span class="attr">el</span>:<span class="string">&quot;#app&quot;</span> &#125;) </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>css样式放在<head>标签中</p>
+<p>Layout 局部：通过基础的 24 分栏，迅速简便地创建布局。也就是默认将一行分为 24 栏，根据页面要求给每一列设置所占的栏数。<br>Container 布局容器：用于布局的容器组件，方便快速搭建页面的基本结构。如下图就是布局容器效果。</p>
+<p>Maven依赖管理：<br>如果一个项目一要用到项目二的资源，把项目二的坐标复制后，以denpendency的方式添加到项目一：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>login-register<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果不想用项目二的某个资源可以使用排除依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>login-register<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><optional>true</optional>：对外隐藏该资源</p>
+<p>依赖范围：依赖通过 scope 标签指定依赖的作用范围<br>①compile ：作用于编译环境、测试环境、运行环境<br>②test ： 作用于测试环境。典型的就是Junit坐标，以后使用Junit时，都会将scope指定为该值<br>③provided ：作用于编译环境、测试环境。我们后面会学习 servlet-api ，在使用它时，必须将 scope 设置为该值，不然运行时就会报错<br>④runtime ： 作用于测试环境、运行环境。jdbc驱动一般将 scope 设置为该值，当然不设置也没有任何问题<br>如果引入坐标不指定 scope 标签时，默认就是 compile 值。以后大部分jar包都是使用默认值。</p>
+<p>Maven插件：<br>①插件与生命周期内的阶段绑定，在执行到对应生命周期时执行对应的插件功能<br>②默认maven在各个生命周期上绑定有预设的功能<br>③通过插件可以自定义其他功能</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://new-zxp.github.io">Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://new-zxp.github.io/2022/07/10/Web/">https://new-zxp.github.io/2022/07/10/Web/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://new-zxp.github.io" target="_blank">土灵猪</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JavaWeb/">JavaWeb</a></div><div class="post_share"><div class="social-share" data-image="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/09/10/git/"><img class="prev-cover" src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Git笔记</div></div></a></div><div class="next-post pull-right"><a href="/2022/05/10/JavaSE/"><img class="next-cover" src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JavaSE笔记</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NzMwMi8zMzc2Ng=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Z</div><div class="author-info__description">太美丽了</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/New-zxp"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/New-zxp" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxkk3851@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/36194738/favlist?fid=1424684538&amp;ftype=create" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/09/21/ssm/" title="SSM笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSM笔记"/></a><div class="content"><a class="title" href="/2022/09/21/ssm/" title="SSM笔记">SSM笔记</a><time datetime="2022-09-20T16:00:00.000Z" title="发表于 2022-09-21 00:00:00">2022-09-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/20/tiktok/" title="国内安卓免拔卡使用tiktok"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="国内安卓免拔卡使用tiktok"/></a><div class="content"><a class="title" href="/2022/09/20/tiktok/" title="国内安卓免拔卡使用tiktok">国内安卓免拔卡使用tiktok</a><time datetime="2022-09-19T16:00:00.000Z" title="发表于 2022-09-20 00:00:00">2022-09-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/10/git/" title="Git笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git笔记"/></a><div class="content"><a class="title" href="/2022/09/10/git/" title="Git笔记">Git笔记</a><time datetime="2022-09-09T16:00:00.000Z" title="发表于 2022-09-10 00:00:00">2022-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/10/Web/" title="JavaWeb笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaWeb笔记"/></a><div class="content"><a class="title" href="/2022/07/10/Web/" title="JavaWeb笔记">JavaWeb笔记</a><time datetime="2022-07-09T16:00:00.000Z" title="发表于 2022-07-10 00:00:00">2022-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/10/JavaSE/" title="JavaSE笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaSE笔记"/></a><div class="content"><a class="title" href="/2022/05/10/JavaSE/" title="JavaSE笔记">JavaSE笔记</a><time datetime="2022-05-09T16:00:00.000Z" title="发表于 2022-05-10 00:00:00">2022-05-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">🥰🥰🥰</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
