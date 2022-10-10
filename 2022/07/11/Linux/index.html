@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Linux笔记 | 土灵猪</title><meta name="keywords" content="Linux"><meta name="author" content="Z"><meta name="copyright" content="Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linux笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux笔记">
+<meta property="og:url" content="https://new-zxp.github.io/2022/07/11/Linux/index.html">
+<meta property="og:site_name" content="土灵猪">
+<meta property="og:description" content="Linux笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/14.jpg">
+<meta property="article:published_time" content="2022-07-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-10T09:02:48.216Z">
+<meta property="article:author" content="Z">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/14.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://new-zxp.github.io/2022/07/11/Linux/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":100},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Z","link":"链接: ","source":"来源: 土灵猪","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: false,
+  postUpdate: '2022-10-10 17:02:48'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/constown/HexoCustomFile@0.0.4/dist/css/custom.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/14.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">土灵猪</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-10T16:00:00.000Z" title="发表于 2022-07-11 00:00:00">2022-07-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-10T09:02:48.216Z" title="更新于 2022-10-10 17:02:48">2022-10-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>Linux概述</strong></p>
+<p>Linux是基于Unix的，是一种自由和开放源码的操作系统，存在着许多不同的Linux版本，但它们都使用了Linux内核。</p>
+<p><strong>Linux系统的应用</strong></p>
+<ul>
+<li>服务器系统Web应用服务器、数据库服务器、接口服务器、DNS、FTP等</li>
+<li>嵌入式系统路由器、防火墙、手机、PDA、IP 分享器、交换器、家电用品的微电脑控制器等</li>
+<li>高性能运算、计算密集型应用，Linux有强大的运算能力</li>
+<li>桌面应用系统</li>
+<li>移动手持系统</li>
+</ul>
+<p><strong>Linux主流版本</strong>：ubuntu、CentOS、redhat、debian等</p>
+<p><strong>Linux安装</strong>：</p>
+<p><strong>VMware下载安装</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html">下载地址</a>点击Download now</li>
+<li>安装完成后输入许可证即可</li>
+</ul>
+<p><strong>创建CentOS虚拟机</strong></p>
+<ul>
+<li>选择典型配置</li>
+<li>稍后安装操作系统</li>
+<li>自定义硬件配置，选中新CD使用<a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/">ISO映像文件</a></li>
+<li>右上角打开网络适配器：system eth0</li>
+<li>右键打开命令行：open in Terminal</li>
+<li>ifconfig：获取ip地址</li>
+<li>使用Finalshell远程操作虚拟机</li>
+</ul>
+<p><strong>Linux目录结构</strong></p>
+<p>“&#x2F;“：根目录</p>
+<p>管理员登录会进入到root目录</p>
+<p>用户登录会进入到home文件下的对应用户目录</p>
+<p>usr：软件安装目录</p>
+<p><strong>Linux常用命令</strong></p>
+<p>ipconfig：获取ip地址</p>
+<p>pwd：获取当前目录</p>
+<p>touch创建一个空文件：touch a.txt</p>
+<p>clear：清屏</p>
+<p><strong>显示文件列表</strong></p>
+<p>ls：获取当前目录下的所有文件(只显示名称)</p>
+<p>ls -a：获取当前目录下的所有文件(包括隐藏文件)</p>
+<p>ls -l &#x2F; ll：获取当前目录下的所有文件(会展示详细信息)</p>
+<p><strong>切换目录</strong></p>
+<p>cd 文件名(tab自动补全)：进入文件夹</p>
+<p>cd 文件路径：进入该路径，例如：cd &#x2F;usr&#x2F;src</p>
+<p>cd .. ：返回上一级</p>
+<p>cd ~：回到当前用户目录root&#x2F;home下的用户目录</p>
+<p>cd -：返回上一次所在目录</p>
+<p><strong>创建目录和移除目录</strong></p>
+<p>mkdir 文件名：创建文件夹</p>
+<p>mkdi -p 文件名&#x2F;文件名：创建多级文件夹</p>
+<p>redir 文件名：删除空文件夹</p>
+<p><strong>浏览文件</strong></p>
+<p>cat 文件：查看文件所有内容</p>
+<p>more 文件：分屏查看文件内容，q退出查看</p>
+<p>less 文件：和more类似，支持上下键翻页</p>
+<p>tail -数字 文件名：查看文件最后几行内容</p>
+<p>tail -f 文件名：动态查看文件变化，CTRL + C结束</p>
+<p><strong>文件复制剪切删除</strong></p>
+<p>cp a b：在当前目录下把a文件复制为b文件</p>
+<p>cp a b&#x2F;：把a文件复制到b文件夹中</p>
+<p>cp a 路径：把a文件复制到该路径中</p>
+<p>cp a b&#x2F;c.：把a文件复制为c文件并保存到b文件中</p>
+<p>cp a ..&#x2F;：将a文件复制到上一层目录中</p>
+<p>mv a 路径：把a剪切到该路径中（其他和cp类似）</p>
+<p>rm 文件名：删除文件，y确认删除</p>
+<p>rm -r 文件夹名：删除文件夹，y确认删除</p>
+<p>rm -rf：不询问直接删除文件夹</p>
+<p>rm -f：不询问直接删除文件</p>
+<p>rm -rf &#x2F;*：自杀</p>
+<p><strong>打包和解压</strong></p>
+<p>tar能够将用户所指定的文件或目录打包成一个文件，但不做压缩。一般Linux上常用的压缩方式是选用tar将许多文件打包成一个文件，再以gzip压缩命令压缩成xxx.tar.gz(或称为xxx.tgz)的文件</p>
+<ul>
+<li>-c：创建一个新tar文件</li>
+<li>-v：显示运行过程的信息</li>
+<li>-f：指定文件名</li>
+<li>-z：调用gzip压缩命令进行压缩</li>
+<li>-t：查看压缩文件的内容</li>
+<li>-x：解开tar文件</li>
+</ul>
+<p>tar -cvf xxx.tar .&#x2F;*：把当前文件夹所有文件打包到xxx中</p>
+<p>tar -cvf xxx.tar 文件名&#x2F;：把该文件打包到xxx中</p>
+<p>tar –zcvf xxx.tar.gz .&#x2F;* ：把当前文件夹所有文件打包并压缩到xxx中</p>
+<p>tar –zxvf xxx.tar：解压到当前目录</p>
+<p>tar -zxvf xxx.tar.gz -C .&#x2F;a：解压到当前目录下的a文件中中</p>
+<p><strong>查找文件和内容</strong></p>
+<p>find &#x2F; -name “ins*”：查找以ins开头的文件</p>
+<p>find &#x2F; -name “ins*” -ls：查找 以ins开头的文件详细信息</p>
+<p>find &#x2F; –user xxx –ls 查找用户xxx的文件</p>
+<p>find &#x2F; –user xxx –type d –ls 查找用户xxx的目录</p>
+<p>find &#x2F; -perm -777 -type d-ls：查找权限是777的文件</p>
+<p>grep：查找文件里符合条件的字符串</p>
+<p>grep xxx 文件名 ：在文件中查找xxx，并显示其所在行</p>
+<p>grep xxx 文件名 –-color ：高亮显示xxx</p>
+<p>grep xxx 文件名 -A1：显示所在行和后一行</p>
+<p>grep xxx 文件名 -B1：显示所在行和前一行</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://new-zxp.github.io">Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://new-zxp.github.io/2022/07/11/Linux/">https://new-zxp.github.io/2022/07/11/Linux/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://new-zxp.github.io" target="_blank">土灵猪</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post_share"><div class="social-share" data-image="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/14.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/30/SpringCloud/"><img class="prev-cover" src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">SpringCloud笔记</div></div></a></div><div class="next-post pull-right"><a href="/2022/05/12/SpringBoot/"><img class="next-cover" src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/9.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SpringBoot笔记</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NzMwMi8zMzc2Ng=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Z</div><div class="author-info__description">太美丽了</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/New-zxp"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/New-zxp" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxkk3851@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/36194738/favlist?fid=1424684538&amp;ftype=create" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/30/SpringCloud/" title="SpringCloud笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringCloud笔记"/></a><div class="content"><a class="title" href="/2022/08/30/SpringCloud/" title="SpringCloud笔记">SpringCloud笔记</a><time datetime="2022-08-29T16:00:00.000Z" title="发表于 2022-08-30 00:00:00">2022-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/11/Linux/" title="Linux笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/14.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux笔记"/></a><div class="content"><a class="title" href="/2022/07/11/Linux/" title="Linux笔记">Linux笔记</a><time datetime="2022-07-10T16:00:00.000Z" title="发表于 2022-07-11 00:00:00">2022-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/12/SpringBoot/" title="SpringBoot笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot笔记"/></a><div class="content"><a class="title" href="/2022/05/12/SpringBoot/" title="SpringBoot笔记">SpringBoot笔记</a><time datetime="2022-05-11T16:00:00.000Z" title="发表于 2022-05-12 00:00:00">2022-05-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/20/tiktok/" title="国内安卓免拔卡使用tiktok"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="国内安卓免拔卡使用tiktok"/></a><div class="content"><a class="title" href="/2022/04/20/tiktok/" title="国内安卓免拔卡使用tiktok">国内安卓免拔卡使用tiktok</a><time datetime="2022-04-19T16:00:00.000Z" title="发表于 2022-04-20 00:00:00">2022-04-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/15/Maven/" title="Maven笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Maven笔记"/></a><div class="content"><a class="title" href="/2022/02/15/Maven/" title="Maven笔记">Maven笔记</a><time datetime="2022-02-14T16:00:00.000Z" title="发表于 2022-02-15 00:00:00">2022-02-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">🥰🥰🥰</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
