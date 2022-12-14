@@ -1,0 +1,32 @@
+- class_name: mylinks
+  class_desc: 我的主页
+  link_list:
+    - name: Github
+      link: https://github.com/New-zxp
+      avatar: https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/github.webp
+      descr: ZXP_Github
+    - name: 我的豆瓣
+      link: https://www.douban.com/people/201481456
+      avatar: https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/douban.webp
+      descr: douban
+
+- class_name: 网站
+  class_desc: 好看的网站
+  link_list:
+    - name: Youtube
+      link: https://www.youtube.com/
+      avatar: https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/youtube.webp
+      descr: 世界最大的视频网站
+    - name: Twitch
+      link: https://www.twitch.tv/
+      avatar: https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/twitch.webp
+      descr: 世界最大的直播网站
+    - name: 哔哩哔哩
+      link: https://www.bilibili.com/
+      avatar: https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/bilibili.webp
+      descr: 中国最大的视频网站
+    - name: Tampermonkey
+      link: https://greasyfork.org/zh-CN
+      avatar: https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/tampermonkey.webp
+      descr: 脚本网站
+
