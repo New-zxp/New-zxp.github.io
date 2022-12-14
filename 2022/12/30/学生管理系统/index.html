@@ -1,0 +1,360 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>学生管理系统 | 土灵猪</title><meta name="keywords" content="项目"><meta name="author" content="Z"><meta name="copyright" content="Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="学生管理系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学生管理系统">
+<meta property="og:url" content="https://new-zxp.github.io/2022/12/30/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="土灵猪">
+<meta property="og:description" content="学生管理系统">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/3.jpg">
+<meta property="article:published_time" content="2022-12-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-12-14T08:27:10.409Z">
+<meta property="article:author" content="Z">
+<meta property="article:tag" content="项目">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://new-zxp.github.io/2022/12/30/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":100},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Z","link":"链接: ","source":"来源: 土灵猪","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '学生管理系统',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: false,
+  postUpdate: '2022-12-14 16:27:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/constown/HexoCustomFile@0.0.4/dist/css/custom.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/3.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">土灵猪</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">学生管理系统</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-29T16:00:00.000Z" title="发表于 2022-12-30 00:00:00">2022-12-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-14T08:27:10.409Z" title="更新于 2022-12-14 16:27:10">2022-12-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="学生管理系统"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>版本信息</strong></p>
+<ul>
+<li>jdk：1.8.0_341</li>
+<li>MySQL：8.0.31</li>
+<li>tomcat：2.7.4</li>
+<li>SpringBoot：2.7.4</li>
+<li>mybatis-plus：3.4.2</li>
+<li>fastjson：1.2.62</li>
+<li>druid：1.2.13</li>
+</ul>
+<p><strong>项目结构</strong></p>
+<p>Java类</p>
+<ul>
+<li><p>Student：Student的实体类</p>
+</li>
+<li><p>GlobalExceptionHandler：全局异常处理器，当学号重复时，违反了数据库的唯一约束条件，我们需要针对这个异常进行处理，当注册学号已存在时返回给页面“学号已经存在”的信息</p>
+</li>
+<li><p>JacksonObjectMapper：基于jackson将Java对象转为json，或者将json转为Java对象，这样页面传递给后端例如长整型数字时，不用担心丢失精度问题</p>
+</li>
+<li><p>R：约定后端返回给页面的信息，使得页面可以更见规范的接收后端返回的数据</p>
+</li>
+<li><p>WebMvcConfig：映射静态资源目录，使得静态资源可以被访问，同时添加对象转换器</p>
+</li>
+<li><p>StudentMapper：代理类，与数据库进行交互</p>
+</li>
+<li><p>StudentService：用于接收用户提交请求的代码</p>
+</li>
+<li><p>StudentController：对页面传来的数据进行响应</p>
+</li>
+<li><p>LoginCheckFilter：过滤器，对未进行登录的访问请求进行拦截</p>
+</li>
+<li><p>StudenManageApplication：SpringBoot启动类</p>
+</li>
+</ul>
+<p>静态资源</p>
+<ul>
+<li>csss文件：存放页面的样式文件</li>
+<li>element-ui文件：element组件所在文件夹</li>
+<li>img文件：存放页面需要的照片</li>
+<li>js：存放页面的JavaScript文件</li>
+<li>page：存放页面的html文件</li>
+<li>application.yml：项目的配置文件，其中pro是开发环境，dev是生产环境</li>
+<li>pom文件：maven的配置文件，可以管理项目所以需要的依赖，如mysql的引入和版本等</li>
+</ul>
+<p><strong>项目介绍</strong></p>
+<p>远程项目访问路径：<a target="_blank" rel="noopener" href="http://101.132.78.51:1105/static/page/login.html">http://101.132.78.51:1105/static/page/login.html</a></p>
+<ul>
+<li><p>注册页面介绍</p>
+<p>学号，姓名，密码，确认密码和邮箱都通过JavaScript进行验证，验证使用的正则表达式</p>
+<ul>
+<li><p>学号验证规则：必须为数字，且至少6位数字</p>
+</li>
+<li><p>姓名验证规则：不能为空</p>
+</li>
+<li><p>密码验证规则：至少六位</p>
+</li>
+<li><p>确认密码验证规则：必须和密码保持一致</p>
+</li>
+<li><p>邮箱验证规则：格式必须为：任意内容 + @ + 任意内容  + . + 任意内容</p>
+</li>
+</ul>
+<p>​        当输入内容不符合要求时，页面上的“开始输入”会变成”输入错误”，输入正确的内容后会变成”输入正确“</p>
+<p>性别默认是男生，当选择‘男’和‘女’会在输入框后显示出对应的信息。如果有任意一处不符合要求，点击”注册“按钮时会显示出错误的内容。</p>
+<p>​        当输入内容符合验证规则时，页面会将表单信息发送到服务端，如果服务端检测到学号已经存在，会给页面返回错误信息，页面收到信息后，会在页面上显示”学号已经存在“，如果没有错误，服务端就会将数据储存在数据库，页面会随之跳转到学生管理页面。</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 注册功能</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> request</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> student</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@PostMapping(&quot;/register&quot;)</span></span><br><span class="line"><span class="keyword">public</span> R&lt;Student&gt; <span class="title function_">register</span><span class="params">(HttpServletRequest request, <span class="meta">@RequestBody</span> Student student)</span>&#123;</span><br><span class="line">    <span class="comment">//把数据保存在数据库</span></span><br><span class="line">    studentService.save(student);</span><br><span class="line">    <span class="comment">//把用户的id存入session并设置过期时间位10分钟</span></span><br><span class="line">    <span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span> request.getSession();</span><br><span class="line">    session.setAttribute(<span class="string">&quot;student&quot;</span>,student.getId());</span><br><span class="line">    session.setMaxInactiveInterval(<span class="number">600</span>);</span><br><span class="line">    <span class="keyword">return</span> R.success(student);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>登录页面介绍</p>
+<p>学号和密码通过JavaScript进行验证，并且学号输入框设置了只能输入数字，输入数字外的内容将不会记录，如果学号和密码不符合要求会对用户进行提醒，可以通过链接跳转到注册页面，用户输入符合要求的内容后页面会将数据发送到服务端，如果密码错误或者用户不存在会返回对应信息，如果登录成功，将id存入session</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 登录功能</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> request</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> student</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@PostMapping(&quot;/login&quot;)</span></span><br><span class="line"><span class="keyword">public</span> R&lt;Student&gt; <span class="title function_">login</span><span class="params">(HttpServletRequest request, <span class="meta">@RequestBody</span> Student student)</span>&#123;</span><br><span class="line">  </span><br><span class="line">    LambdaQueryWrapper&lt;Student&gt; lqw = <span class="keyword">new</span> <span class="title class_">LambdaQueryWrapper</span>&lt;&gt;();</span><br><span class="line">    lqw.eq(Student::getStudentId,student.getStudentId());</span><br><span class="line">    <span class="type">Student</span> <span class="variable">stu</span> <span class="operator">=</span> studentService.getOne(lqw);<span class="comment">//根据Wrapper，查询一条记录</span></span><br><span class="line">  </span><br><span class="line">    <span class="keyword">if</span>(stu == <span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> R.error(<span class="string">&quot;该用户不存在！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> student.getPassword();</span><br><span class="line">    <span class="keyword">if</span>(!password.equals(stu.getPassword()))&#123;</span><br><span class="line">        <span class="keyword">return</span> R.error(<span class="string">&quot;密码错误！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span> request.getSession();</span><br><span class="line">    session.setAttribute(<span class="string">&quot;student&quot;</span>,stu.getId());</span><br><span class="line">    session.setMaxInactiveInterval(<span class="number">600</span>);<span class="comment">//设置session存在10分钟</span></span><br><span class="line">    <span class="keyword">return</span> R.success(stu);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>学生管理页面介绍</p>
+<p>该页面主要由element-ui搭建完成，主要分为三个区域：标题区域，导航区域，主体内容区域</p>
+<p>标题区域：只有”学生信息管理系统“的标题</p>
+<p>导航区域：由四个按钮：”个人信息“，”所有用户列表“，”按条件查询学生“，”新增用户“，分别对应四个方法</p>
+<ul>
+<li><p>”个人信息“：当用户点击”个人信息“按钮时，js会调用方法将个人信息表从不可见状态变为可见，这样就达到了展示个人信息的效果。</p>
+</li>
+<li><p>”所有用户列表“：当用户点击”所有用户列表“按钮时，js会将个人信息表重新变为不可见状态，同时页面会向服务端发送请求，进行所有用户信息的查询，并将信息展示在主体内容区域</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 查询所有学生信息</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@GetMapping(&quot;/list&quot;)</span></span><br><span class="line"><span class="keyword">public</span> R&lt;List&lt;Student&gt;&gt; <span class="title function_">list</span><span class="params">()</span>&#123;</span><br><span class="line">    List&lt;Student&gt; studentList = studentService.list();</span><br><span class="line">    <span class="keyword">return</span> R.success(studentList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>”按条件查询学生“：当用户点击”按条件查询学生“按钮时，页面会弹出一个表单，在上边输入想要查询的信息即完成对学生信息的查询，支持四个字段的查询：学号，姓名，性别，邮箱，其中学号，姓名和邮箱是使用的模糊查询，只要用户的信息包含你要查询的内容就会在页面显示出来，可以留空，留空的字段不参与查询，如果不传递任何查询信息，则执行查询所有操作。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 按条件查询学生信息</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> student</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@PostMapping(&quot;/search&quot;)</span></span><br><span class="line"><span class="keyword">public</span> R&lt;List&lt;Student&gt;&gt; <span class="title function_">search</span><span class="params">(<span class="meta">@RequestBody</span> Student student)</span>&#123;</span><br><span class="line">    LambdaQueryWrapper&lt;Student&gt; lambdaQueryWrapper = <span class="keyword">new</span> <span class="title class_">LambdaQueryWrapper</span>&lt;&gt;();</span><br><span class="line">    lambdaQueryWrapper.like(student.getStudentId() != <span class="literal">null</span>,Student::getStudentId,student.getStudentId());</span><br><span class="line">    lambdaQueryWrapper.like(!StringUtils.isEmpty(student.getUsername()),Student::getUsername,student.getUsername());</span><br><span class="line">    lambdaQueryWrapper.eq(!StringUtils.isEmpty(student.getGender()),Student::getGender,student.getGender());</span><br><span class="line">    lambdaQueryWrapper.like(!StringUtils.isEmpty(student.getEmail()),Student::getEmail,student.getEmail());</span><br><span class="line">    List&lt;Student&gt; studentList = studentService.list(lambdaQueryWrapper);</span><br><span class="line">    <span class="keyword">return</span> R.success(studentList);</span><br><span class="line">&#125;</span><br><span class="line">      </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>”新增用户“：会弹出一个表单，表单和注册页面一样也含有表单验证，信息输入无误后才能新增用户，执行完新增用户操作后，默认会进行一次查询所有操作。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 添加学生信息</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> student</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@PostMapping(&quot;/add&quot;)</span></span><br><span class="line"><span class="keyword">public</span> R&lt;String&gt; <span class="title function_">add</span><span class="params">(<span class="meta">@RequestBody</span> Student student)</span>&#123;</span><br><span class="line">    log.info(student.getGender());</span><br><span class="line">    <span class="keyword">if</span> (student.getGender()==<span class="literal">null</span> || student.getGender()==<span class="string">&quot;&quot;</span>)&#123;</span><br><span class="line">        student.setGender(<span class="string">&quot;男生&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    studentService.save(student);</span><br><span class="line">    <span class="keyword">return</span> R.success(<span class="string">&quot;添加成功&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除用户：在查询完学生信息后，对应用户后有一个删除按钮，点击后即可删除该用户</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@DeleteMapping(&quot;/delelte&quot;)</span></span><br><span class="line"><span class="keyword">public</span> R&lt;String&gt; <span class="title function_">delete</span><span class="params">(Long id)</span>&#123;</span><br><span class="line">    <span class="type">boolean</span> <span class="variable">check</span> <span class="operator">=</span> studentService.removeById(id);</span><br><span class="line">    <span class="keyword">if</span> (check)&#123;</span><br><span class="line">        <span class="keyword">return</span> R.success(<span class="string">&quot;删除成功&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> R.error(<span class="string">&quot;删除失败&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>主体内容区域：右上角有一个登出按钮，点击即可退出登录，并清除存储的session，登出下边是，欢迎用户，用户登陆后会动态的获取用户的姓名，进行欢迎。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 退出登录功能</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> request</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@PostMapping(&quot;/logout&quot;)</span><span class="comment">//网页发送的请求为post方法：/employee/logout</span></span><br><span class="line"><span class="keyword">public</span> R&lt;String&gt; <span class="title function_">logout</span><span class="params">(HttpServletRequest request)</span>&#123;</span><br><span class="line">    <span class="comment">//把员工id从session中去除</span></span><br><span class="line">    request.getSession().removeAttribute(<span class="string">&quot;student&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> R.success(<span class="string">&quot;退出成功&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://new-zxp.github.io">Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://new-zxp.github.io/2022/12/30/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">https://new-zxp.github.io/2022/12/30/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://new-zxp.github.io" target="_blank">土灵猪</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%A1%B9%E7%9B%AE/">项目</a></div><div class="post_share"><div class="social-share" data-image="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/12/30/%E5%89%8D%E7%AB%AF/"><img class="next-cover" src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">前端学习笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/10/11/TT%E5%A4%96%E5%8D%96/" title="瑞吉外卖"><img class="cover" src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-11</div><div class="title">瑞吉外卖</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NzMwMi8zMzc2Ng=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Z</div><div class="author-info__description">太美丽了</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/New-zxp"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/New-zxp" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxkk3851@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/36194738/favlist?fid=1424684538&amp;ftype=create" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/30/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" title="学生管理系统"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学生管理系统"/></a><div class="content"><a class="title" href="/2022/12/30/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" title="学生管理系统">学生管理系统</a><time datetime="2022-12-29T16:00:00.000Z" title="发表于 2022-12-30 00:00:00">2022-12-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/30/%E5%89%8D%E7%AB%AF/" title="前端学习笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端学习笔记"/></a><div class="content"><a class="title" href="/2022/12/30/%E5%89%8D%E7%AB%AF/" title="前端学习笔记">前端学习笔记</a><time datetime="2022-12-29T16:00:00.000Z" title="发表于 2022-12-30 00:00:00">2022-12-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/11/TT%E5%A4%96%E5%8D%96/" title="瑞吉外卖"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="瑞吉外卖"/></a><div class="content"><a class="title" href="/2022/10/11/TT%E5%A4%96%E5%8D%96/" title="瑞吉外卖">瑞吉外卖</a><time datetime="2022-10-10T16:00:00.000Z" title="发表于 2022-10-11 00:00:00">2022-10-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/30/SpringCloud/" title="SpringCloud笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringCloud笔记"/></a><div class="content"><a class="title" href="/2022/08/30/SpringCloud/" title="SpringCloud笔记">SpringCloud笔记</a><time datetime="2022-08-29T16:00:00.000Z" title="发表于 2022-08-30 00:00:00">2022-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/11/Linux/" title="Linux笔记"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/14.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux笔记"/></a><div class="content"><a class="title" href="/2022/07/11/Linux/" title="Linux笔记">Linux笔记</a><time datetime="2022-07-10T16:00:00.000Z" title="发表于 2022-07-11 00:00:00">2022-07-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">🥰🥰🥰</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
