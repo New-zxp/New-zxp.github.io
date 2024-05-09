@@ -1,0 +1,719 @@
+<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Linux笔记 | Snoopy的小窝</title><meta name="author" content="Snoopy"><meta name="copyright" content="Snoopy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Linux学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux笔记">
+<meta property="og:url" content="http://example.com/2022-06-21-Linux.html">
+<meta property="og:site_name" content="Snoopy的小窝">
+<meta property="og:description" content="Linux学习笔记">
+<meta property="og:locale">
+<meta property="og:image" content="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/avatar.jpg">
+<meta property="article:published_time" content="2022-06-21T02:00:00.000Z">
+<meta property="article:modified_time" content="2024-05-09T02:19:08.021Z">
+<meta property="article:author" content="Snoopy">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/avatar.jpg"><link rel="shortcut icon" href="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/favicon.png"><link rel="canonical" href="http://example.com/2022-06-21-Linux.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;c283732c5e7b4e58a56ee18077e56d1d&quot;}"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"You have switched to Traditional Chinese","cht_to_chs":"You have switched to Simplified Chinese","day_to_night":"You have switched to Dark Mode","night_to_day":"You have switched to Light Mode","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-center"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-09 10:19:08'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/home.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Snoopy的小窝"><img class="site-icon" src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/favicon.png"/><span class="site-name">Snoopy的小窝</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-06-21T02:00:00.000Z" title="Created 2022-06-21 10:00:00">2022-06-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-05-09T02:19:08.021Z" title="Updated 2024-05-09 10:19:08">2024-05-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">4.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>18mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Linux概述"><a href="#Linux概述" class="headerlink" title="Linux概述"></a><strong>Linux概述</strong></h1><p>Linux是基于Unix的，是一种自由和开放源码的操作系统，存在着许多不同的Linux版本，但它们都使用了Linux内核。</p>
+<p><strong>Linux系统的应用</strong></p>
+<ul>
+<li>服务器系统Web应用服务器、数据库服务器、接口服务器、DNS、FTP等</li>
+<li>嵌入式系统路由器、防火墙、手机、PDA、IP 分享器、交换器、家电用品的微电脑控制器等</li>
+<li>高性能运算、计算密集型应用，Linux有强大的运算能力</li>
+<li>桌面应用系统</li>
+<li>移动手持系统</li>
+</ul>
+<p><strong>Linux主流版本</strong>：ubuntu、CentOS、redhat、debian等</p>
+<h1 id="Linux安装"><a href="#Linux安装" class="headerlink" title="Linux安装"></a><strong>Linux安装</strong></h1><p><strong>VMware下载安装</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html">下载地址</a>点击Download now</li>
+<li>安装完成后输入许可证即可</li>
+</ul>
+<p><strong>创建CentOS虚拟机</strong></p>
+<ul>
+<li>选择典型配置</li>
+<li>稍后安装操作系统</li>
+<li>自定义硬件配置，选中新CD使用<a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/">ISO映像文件</a></li>
+<li>右上角打开网络适配器：system eth0</li>
+<li>右键打开命令行：open in Terminal</li>
+<li>ifconfig：获取ip地址</li>
+<li>使用Finalshell远程操作虚拟机</li>
+</ul>
+<h1 id="Linux目录结构"><a href="#Linux目录结构" class="headerlink" title="Linux目录结构"></a><strong>Linux目录结构</strong></h1><p>“/“：根目录</p>
+<p>管理员登录会进入到root目录</p>
+<p>用户登录会进入到home文件下的对应用户目录</p>
+<p>usr：软件安装目录</p>
+<h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a><strong>Linux常用命令</strong></h1><p>ifconfig：获取ip地址</p>
+<p>pwd：获取当前目录</p>
+<p>touch创建一个空文件：touch a.txt</p>
+<p>clear：清屏</p>
+<h2 id="显示文件列表"><a href="#显示文件列表" class="headerlink" title="显示文件列表"></a><strong>显示文件列表</strong></h2><p>ls：获取当前目录下的所有文件(只显示名称)</p>
+<p>ls -a：获取当前目录下的所有文件(包括隐藏文件)</p>
+<p>ls -l / ll：获取当前目录下的所有文件(会展示详细信息)</p>
+<h2 id="切换目录"><a href="#切换目录" class="headerlink" title="切换目录"></a><strong>切换目录</strong></h2><p>cd 文件名(tab自动补全)：进入文件夹</p>
+<p>cd 文件路径：进入该路径，例如：cd /usr/src</p>
+<p>cd .. ：返回上一级</p>
+<p>cd ~：回到当前用户目录root/home下的用户目录</p>
+<p>cd -：返回上一次所在目录</p>
+<h2 id="创建目录和移除目录"><a href="#创建目录和移除目录" class="headerlink" title="创建目录和移除目录"></a><strong>创建目录和移除目录</strong></h2><p>mkdir 文件名：创建文件夹</p>
+<p>mkdi -p 文件名/文件名：创建多级文件夹</p>
+<p>redir 文件名：删除空文件夹</p>
+<h2 id="浏览文件"><a href="#浏览文件" class="headerlink" title="浏览文件"></a><strong>浏览文件</strong></h2><p>cat 文件：查看文件所有内容</p>
+<p>more 文件：分屏查看文件内容，q退出查看</p>
+<p>less 文件：和more类似，支持上下键翻页</p>
+<p>tail -数字 文件名：查看文件最后数字行内容</p>
+<p>tail -f 文件名：动态查看文件变化，CTRL + C结束</p>
+<h2 id="文件复制剪切删除"><a href="#文件复制剪切删除" class="headerlink" title="文件复制剪切删除"></a><strong>文件复制剪切删除</strong></h2><p>cp a b：在当前目录下把a文件复制为b文件</p>
+<p>cp a b/：把a文件复制到b文件夹中</p>
+<p>cp a 路径：把a文件复制到该路径中</p>
+<p>cp a b/c.：把a文件复制为c文件并保存到b文件中</p>
+<p>cp a ../：将a文件复制到上一层目录中</p>
+<p>mv a 路径：把a剪切到该路径中（其他和cp类似）</p>
+<p>mv 文件名 新文件名：重命名文件</p>
+<p>rm 文件名：删除文件，y确认删除</p>
+<p>rm -r 文件夹名：删除文件夹，y确认删除</p>
+<p>rm -rf：不询问直接删除文件夹</p>
+<p>rm -f：不询问直接删除文件</p>
+<p>rm -rf /*：自杀</p>
+<h2 id="打包和解压"><a href="#打包和解压" class="headerlink" title="打包和解压"></a><strong>打包和解压</strong></h2><p>tar能够将用户所指定的文件或目录打包成一个文件，但不做压缩。一般Linux上常用的压缩方式是选用tar将许多文件打包成一个文件，再以gzip压缩命令压缩成xxx.tar.gz(或称为xxx.tgz)的文件</p>
+<ul>
+<li>-c：创建一个新tar文件</li>
+<li>-v：显示运行过程的信息</li>
+<li>-f：指定文件名</li>
+<li>-z：调用gzip压缩命令进行压缩</li>
+<li>-t：查看压缩文件的内容</li>
+<li>-x：解开tar文件</li>
+</ul>
+<p>tar -cvf xxx.tar ./*：把当前文件夹所有文件打包到xxx中</p>
+<p>tar -cvf xxx.tar 文件名/：把该文件打包到xxx中</p>
+<p>tar –zcvf xxx.tar.gz ./* ：把当前文件夹所有文件打包并压缩到xxx中</p>
+<p>tar –zxvf xxx.tar：解压到当前目录</p>
+<p>tar -zxvf xxx.tar.gz -C ./a：解压到当前目录下的a文件中</p>
+<h2 id="查找文件和内容"><a href="#查找文件和内容" class="headerlink" title="查找文件和内容"></a><strong>查找文件和内容</strong></h2><p>find / -name “ins*”：查找以ins开头的文件</p>
+<p>find / -name “ins*” -ls：查找 以ins开头的文件详细信息</p>
+<p>find / –user xxx –ls 查找用户xxx的文件</p>
+<p>find / –user xxx –type d –ls 查找用户xxx的目录</p>
+<p>find / -perm -777 -type d-ls：查找权限是777的文件</p>
+<p>grep：查找文件里符合条件的字符串</p>
+<p>grep xxx 文件名 ：在文件中查找xxx，并显示其所在行</p>
+<p>grep xxx 文件名 –-color ：高亮显示xxx</p>
+<p>grep xxx 文件名 -A1：显示所在行和后一行</p>
+<p>grep xxx 文件名 -B1：显示所在行和前一行</p>
+<h2 id="VI和VIM编辑器"><a href="#VI和VIM编辑器" class="headerlink" title="VI和VIM编辑器"></a><strong>VI和VIM编辑器</strong></h2><p>在Linux下一般使用vi编辑器来编辑文件。vi既可以查看文件也可以编辑文件。</p>
+<p>三种模式：命令行、插入、底行模式。</p>
+<ul>
+<li><p>切换到命令行模式：按Esc键</p>
+</li>
+<li><p>切换到插入模式：按 i 、o、a键</p>
+<ul>
+<li>i 在当前位置前插入</li>
+<li>I 在当前行首插入</li>
+<li>a 在当前位置后插入</li>
+<li>A 在当前行尾插入</li>
+<li>o 在当前行之后插入一行</li>
+<li>O 在当前行之前插入一行</li>
+</ul>
+</li>
+<li><p>切换到底行模式：按 :（冒号）</p>
+</li>
+</ul>
+<p>打开文件：vim 文件名</p>
+<p>退出：底行模式q</p>
+<p>保存并退出：底行模式wq</p>
+<p>不保存退出：底行模式q!</p>
+<p>搜索：底行模式/+搜索内容</p>
+<p>快捷键：</p>
+<ul>
+<li>dd – 快速删除一行</li>
+<li>yy - 复制当前行</li>
+<li>nyy - 从当前行向后复制几行</li>
+<li>p - 粘贴</li>
+<li>R – 替换</li>
+</ul>
+<h2 id="重定向输出"><a href="#重定向输出" class="headerlink" title="重定向输出"></a><strong>重定向输出</strong></h2><p>“&gt;”：把控制台输出内容重定向覆盖输出到另一个文件例如，cat a.txt &gt; b.txt</p>
+<p>“&gt;&gt;”：把控制台输出内容重定向追加输出到另一个文件例如，ifconfig &gt;&gt; b.txt</p>
+<h2 id="系统管理命令"><a href="#系统管理命令" class="headerlink" title="系统管理命令"></a><strong>系统管理命令</strong></h2><p>ps -ef ：查看所有进程</p>
+<p>ps -ef | grep 进程名：查找某一进程</p>
+<p>kill 数字：杀死该编号进程</p>
+<p>kill -9 数字：强制杀死进程</p>
+<p><strong>管道</strong></p>
+<p>管道是将一个命令的输出用作另一个命令的输入</p>
+<p>ls –help | more：分屏查看帮助信息</p>
+<p>ps -ef | grep java：查询名字中包含Java的进程</p>
+<h1 id="Linux权限"><a href="#Linux权限" class="headerlink" title="Linux权限"></a><strong>Linux权限</strong></h1><p>文件最前边十个字符表示权限x xxx xxx xxx分为四部分</p>
+<ol>
+<li>文件类型<ul>
+<li>-代表文件</li>
+<li>d表示文件夹</li>
+<li>l表示链接</li>
+</ul>
+</li>
+<li>当前用户具有该文件的权限<ul>
+<li>r：读           代表数字4</li>
+<li>w：写          代表数字2</li>
+<li>x：执行       代表数字1</li>
+</ul>
+</li>
+<li>当前组内其他用户具有该文件的权限<ul>
+<li>r：读</li>
+<li>w：写</li>
+<li>x：执行</li>
+</ul>
+</li>
+<li>其他组的用户具有文件的权限<ul>
+<li>r：读</li>
+<li>w：写</li>
+<li>x：执行</li>
+</ul>
+</li>
+</ol>
+<p><strong>文件权限管理</strong></p>
+<p>chmod u=rwx,g=rx,o=r 文件名：u代表当前用户，g代表组，o代表其他组</p>
+<p>chmod xxx 文件名：xxx为数字，例如7表示rwx，6表示wx</p>
+<p><strong>切换到root用户</strong>：su</p>
+<h1 id="Linux常用网络操作"><a href="#Linux常用网络操作" class="headerlink" title="Linux常用网络操作"></a><strong>Linux常用网络操作</strong></h1><p><strong>主机名配置</strong></p>
+<p>hostname：查看主机名</p>
+<p>hostname xxx：修改主机名，重启后无效</p>
+<p>修改/etc/sysconfig/network文件：永久生效</p>
+<p><strong>ip地址配置</strong></p>
+<p>ifconfig eth0 192.168.12.22：修改ip地址(重启后无效)</p>
+<p>修改 /etc/sysconfig/network-scripts/ifcfg-ens33文件：永久生效</p>
+<ul>
+<li>DEVICE=eth0 #网卡名称</li>
+<li>BOOTPROTO=static #获取ip的方式(static/dhcp/bootp/none)</li>
+<li>ONBOOT=yes # 系统启动时是否设置此网络接口，设置为yes时，系统启动时激活此设备。</li>
+<li>HWADDR=00:0C:29:B5:B2:69 #MAC地址</li>
+<li>IPADDR=12.168.177.129 #IP地址</li>
+<li>NETMASK=255.255.255.0 #子网掩码</li>
+<li>NETWORK=192.168.177.0 #网络地址</li>
+<li>BROADCAST=192.168.0.255 #广播地</li>
+</ul>
+<p><strong>域名映射</strong></p>
+<p>/etc/hosts文件用于在通过主机名进行访问时做ip地址解析用</p>
+<p><strong>网络服务管理</strong></p>
+<p>service 服务名 status 查看指定服务的状态</p>
+<p>service 服务名  stop 停止指定服务</p>
+<p>service 服务名  start 启动指定服务</p>
+<p>service 服务名  restart 重启指定服务</p>
+<p>service –status–all 查看系统中所有后台服务</p>
+<p>netstat –nltp 查看系统中网络进程的端口监听情况</p>
+<h2 id="防火墙设置"><a href="#防火墙设置" class="headerlink" title="防火墙设置"></a><strong>防火墙设置</strong></h2><p>查看防火墙状态：systemctl status firewalld/firewall-cmd –state</p>
+<p>service firewalld status 查看防火墙的状态</p>
+<p>暂时关闭防火墙：systemctl stop firewalld</p>
+<p>永久关闭防火墙：systemctl disable firewalld</p>
+<p>开启防火墙：systemctl start firewalld</p>
+<p>开放指定端口：firewall-cmd –zone=public –add-port=/tcp –permanent</p>
+<p>关闭指定端口：firewall-cmd –zone=public –remove-port=8080/tcp –permanent</p>
+<p>立即生效：firewall-cmd –reload</p>
+<p>查看开放的端口：firewall-cmd –zone=public –list-ports</p>
+<ul>
+<li>systemctl是管理Linux中服务的命令，可以对服务进行启动，停止，重启，查看状态等操作</li>
+<li>firewall-cmd是Linux中专门用于控制防火墙的命令</li>
+<li>为了保证系统安全，服务器的防火墙不建议关闭</li>
+</ul>
+<p>Linux无网络链接：</p>
+<ul>
+<li><p>vi /etc/sysconfig/network-scripts/ifcfg-ens33</p>
+</li>
+<li><p>BOOTPROTO=dhcp</p>
+<p>ONBOOT=yes</p>
+</li>
+<li><p>win + r：services.msc</p>
+<p>打开VM DHCP和NAT服务</p>
+</li>
+<li><p>虚拟机终端输入：service network restart</p>
+</li>
+</ul>
+<h1 id="Linux安装软件"><a href="#Linux安装软件" class="headerlink" title="Linux安装软件"></a><strong>Linux安装软件</strong></h1><ul>
+<li>二进制发布包</li>
+</ul>
+<p>软件已经针对具体平台编译打包发布，只要解压，修改配置即可</p>
+<ul>
+<li>RPM包</li>
+</ul>
+<p>软件已经按照redhat的包管理工具规范RPM进行打包发布，需要获取到相应的软件RPM发布包，然后用RPM命令进行安装</p>
+<ul>
+<li>Yum在线安装</li>
+</ul>
+<p>软件已经以RPM规范打包，但发布在了网络上的一些服务器上，可用yum在线安装服务器上的rpm软件，并且会自动解决软件安装过程中的库依赖问题</p>
+<ul>
+<li>源码编译安装</li>
+</ul>
+<p>软件以源码工程的形式发布，需要获取到源码工程后用相应开发工具进行编译打包部署。</p>
+<p><strong>上传与下载工具介绍</strong></p>
+<ul>
+<li><p>FileZilla</p>
+</li>
+<li><p>lrzsz</p>
+</li>
+</ul>
+<p>我们可以使用yum安装方式安装 yum install lrzsz</p>
+<p>注意：必须有网络</p>
+<p>可以在crt中设置上传与下载目录</p>
+<h2 id="安装wget"><a href="#安装wget" class="headerlink" title="安装wget"></a>安装wget</h2><p>yum install wget</p>
+<p>命令：wget  +  要下载文件的链接</p>
+<h2 id="安装xui"><a href="#安装xui" class="headerlink" title="安装xui"></a>安装xui</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)</span><br></pre></td></tr></table></figure>
+
+<p>firewall-cmd –zone=public –add-port=9999/tcp –permanent</p>
+<p>firewall-cmd –reload</p>
+<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p>yum install git</p>
+<h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><p>1.准备</p>
+<p>进入/usr/local/node文件，没有就进行创建</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span>  /usr/local/node</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/local/node</span><br></pre></td></tr></table></figure>
+
+<p>2.下载</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://npm.taobao.org/mirrors/node/v14.17.0/node-v14.17.0-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>3.解压</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf node-v14.17.0-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>4.配置</p>
+<p>使用ln -s创建软连接</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -s /usr/local/node/node-v14.17.0-linux-x64/bin/npm /usr/local/bin/npm</span><br><span class="line"></span><br><span class="line"><span class="built_in">ln</span> -s /usr/local/node/node-v14.17.0-linux-x64/bin/node /usr/local/bin/node </span><br><span class="line">编辑文件</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vi /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>在文件最后面加入下面的语句</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">NODE_HOME=/usr/local/node/node-v14.17.0-linux-x64</span><br><span class="line">PATH=<span class="variable">$NODE_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> NODE_HOME PATH</span><br></pre></td></tr></table></figure>
+
+<p>让刚才的配置生效</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>5.验证</p>
+<p>node -v</p>
+<p>npm -v</p>
+<h2 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h2><p><a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html">JDK安装地址</a></p>
+<ol>
+<li><p>下载jdk-8u341-linux-x64.tar.gz</p>
+</li>
+<li><p>解压：tar -zxvf jdk-8u341-linux-x64.tar.gz -C /usr/local    //解压到当前目录下的/usr/local文件中</p>
+</li>
+<li><p>配置环境变量：vim /etc/profile</p>
+<p>到底部添加：JAVA_HOME=/usr/local/jdk1.8.0_341</p>
+<p>PATH=$JAVA_HOME/bin:$PATH //美元是英文</p>
+</li>
+<li><p>重新加载配置：source /etc/profile</p>
+</li>
+<li><p>验证：java -version</p>
+</li>
+</ol>
+<h2 id="安装Tomcat"><a href="#安装Tomcat" class="headerlink" title="安装Tomcat"></a>安装Tomcat</h2><p><a target="_blank" rel="noopener" href="https://tomcat.apache.org/download-80.cgi">Tomcat下载地址</a> 选择后缀tar.gz</p>
+<ol>
+<li><p>下载tomcat</p>
+</li>
+<li><p>解压：tar -zxvf apache-tomcat-8.5.83.tar.gz -C /usr/local</p>
+</li>
+<li><p>进入到tomcat的bin目录下，运行startup.sh，命令为：sh startup.sh或./startup.sh</p>
+<p>cd /usr/local/apache-tomcat-8.5.83/bin/</p>
+</li>
+</ol>
+<p>验证Tomcat是否启动成功有两种方式：</p>
+<ol>
+<li><p>查看启动日志</p>
+<p>more /usr/local/apache-tomcat-8.5.83/logs/catalina.out //分屏查看</p>
+</li>
+<li><p>查看进程：ps -ef|grep tomcat</p>
+</li>
+</ol>
+<p>停止Tomcat服务：</p>
+<ul>
+<li>运行Tomcat的bin目录中的停止服务脚本文件：sh shutdown sh/./shutdown.sh</li>
+<li>结束Tomcat进程：查看tomcat进程，获得进程id，执行命令结束进程：kill -9 进程id</li>
+</ul>
+<p>kill命令是Linux提供的用于结束进程的命令，-9表示强制结束</p>
+<h2 id="安装MYSQL"><a href="#安装MYSQL" class="headerlink" title="安装MYSQL"></a>安装MYSQL</h2><ol>
+<li><p>检测当前系统中是否安装MYSQL数据库</p>
+<p>rpm -qa：查询当前系统中安装的所有软件</p>
+<p>rpm -qa | grep mysql：查询当前系统中安装的名称带mysql的软件</p>
+<p>rpm -qa | grep mariadb：查询当前系统中安装的名称带mariadb的软件</p>
+<p>注意：如果当前系统中已经安装MYSQL数据库，安装将失败。Centos7自带mariadb，与MYSQL数据库冲突</p>
+</li>
+<li><p>卸载已经安装的冲突软件</p>
+<p>rpm -e -modeps 软件名：卸载软件</p>
+<p>删除不掉用rpm -e 软件名 –nodeps</p>
+<p>rpm -e –nodeps mariadb-libs-5.5.68-1.el7.x86_64</p>
+</li>
+<li><p>安装wget：yum -y install wget</p>
+</li>
+<li><p>下载MySQL源并安装</p>
+<ul>
+<li>wget <a target="_blank" rel="noopener" href="http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm">http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm</a></li>
+<li>rpm -ivh mysql-community-release-el7-5.noarch.rpm</li>
+</ul>
+</li>
+<li><p>正式安装MYSQL：yum install mysql-server</p>
+<p>或者是把4和5替换为</p>
+<ul>
+<li>wget dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm</li>
+<li>yum install mysql-community-release-el6-5.noarch.rpm -y</li>
+<li>yum install mysql-community-server -y</li>
+</ul>
+</li>
+<li><p>启动MySQL：</p>
+<ul>
+<li>systemctl status mysqld：查看mysql服务状态</li>
+<li>systemctl start mysqld：启动mysql服务</li>
+<li>systemctl enable mysqld：开机启动mysql服务</li>
+<li>netstat -tunlp：查看已经启动的服务</li>
+<li>netstat -tunlp | grep mysql：查找mysql服务</li>
+<li>ps -ef | grep mysql：查看mysql进程</li>
+</ul>
+</li>
+<li><p>登录MySQL数据库并修改密码</p>
+<ul>
+<li><p>mysql -uroot -p：登录数据库，首次密码为空，直接回车</p>
+</li>
+<li><p>set global validate_password_length=4;</p>
+</li>
+<li><p>set global validate_password_policy=LOW;</p>
+</li>
+<li><p>设置密码为1234：set password = password(‘1234’);</p>
+</li>
+</ul>
+</li>
+<li><p>开启用户访问权限：grant all on <em>.</em> to ‘root‘@’%’ identified by ‘1234’;</p>
+<p>刷新权限：flush privileges;</p>
+</li>
+<li><p>开放防火墙端口</p>
+</li>
+</ol>
+<h2 id="安装lrzsz"><a href="#安装lrzsz" class="headerlink" title="安装lrzsz"></a>安装lrzsz</h2><ol>
+<li><p>搜索lrzsz安装包：yum list lrzsz</p>
+</li>
+<li><p>使用yum命令在线安装：yum install lrzsz.x86_64</p>
+<p>yum：是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖关系，并且一次安装所有依赖的软件包。</p>
+</li>
+<li><p>安装以后使用rz命令：上传文件</p>
+</li>
+</ol>
+<h2 id="安装Redis"><a href="#安装Redis" class="headerlink" title="安装Redis"></a>安装Redis</h2><p><a target="_blank" rel="noopener" href="https://download.redis.io/releases/">下载地址</a></p>
+<ol>
+<li>将Redis安装包上传到Linux</li>
+<li>解压安装包：tar -zxvf redis-4.0.0.tar.gz -C /usr/local</li>
+<li>安装Redis的依赖环境gcc，命令：yum install gcc-c++</li>
+<li>进入/usr/local/redis-4.0.0，进行编译，命令：make</li>
+<li>进入redis的src目录，进行安装，命令：make install</li>
+</ol>
+<p><strong>Redis服务启动与停止</strong></p>
+<ul>
+<li><p>在redis/src中启动：./redis-server(ctrl + c停止运行)</p>
+</li>
+<li><p>复制一个shell窗口，在redis/src目录下启动客户端：./redis-cli</p>
+</li>
+<li><p>修改配置文件使得redis后台运行：</p>
+<p>在redis目录下：vim redis.conf</p>
+<p>/dae：快速查找daemonize no </p>
+<p>daemonize no改为daemonize yes</p>
+</li>
+<li><p>ps -ef | grep redis</p>
+</li>
+<li><p>添加配置文件参数并启动：src/redis-server ./redis.conf </p>
+</li>
+</ul>
+<p><strong>设置密码</strong></p>
+<ul>
+<li><p>在redis目录下：vim redis.conf</p>
+</li>
+<li><p>/requirepass：快速查找</p>
+</li>
+<li><p>打开/requirepass的注释，后边跟的是密码</p>
+</li>
+<li><p>添加配置文件参数并启动：src/redis-server ./redis.conf </p>
+</li>
+<li><p>在redis/src目录下启动客户端：./redis-cli -h localhost -p 6379   </p>
+<p>-h：IP地址     -p：端口号</p>
+<p>在127.0.0.1:6379&gt;后输入：auth 123456(密码) </p>
+<p>或者./redis-cli -h localhost -p 6379 -a 123456</p>
+</li>
+</ul>
+<p><strong>远程连接</strong></p>
+<ul>
+<li><p>在配置文件中开启远程连接：vim redis.conf</p>
+<p>/bind：找到bind 127.0.0.1，注释掉 </p>
+</li>
+<li><p>开放6379端口：firewall-cmd –zone=public –add-port=6379/tcp –permanent</p>
+<p>立即生效：firewall-cmd –reload</p>
+</li>
+<li><p>在windows的redis目录打开powershell(shift + 右键)</p>
+</li>
+<li><p>输入命令：./redis-cli.exe -h 107.182.19.176 -p 6379 </p>
+<p>接着输入：auth 123456</p>
+</li>
+</ul>
+<h1 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h1><h2 id="手工项目部署"><a href="#手工项目部署" class="headerlink" title="手工项目部署"></a>手工项目部署</h2><ol>
+<li><p>在IDEA中把SpringBoot项目打成jar包</p>
+</li>
+<li><p>将jar包上传到Linux服务器</p>
+<p>mkdir /usr/local/app：创建目录，将项目jar包放在此处</p>
+</li>
+<li><p>运行项目：java -jar jar包名称</p>
+</li>
+<li><p>改为后台运行，并将日志输出到日志文件</p>
+<p>nohup命令：用于不挂断地运行指定命令，推出终端不会影响程序运行</p>
+<p>语法格式：nohup Command [Arg…] [&amp;]</p>
+<p>参数说明：</p>
+<ul>
+<li>Command：要执行的命令</li>
+<li>Arg：一些参数，可以指定输出文件</li>
+<li>&amp;：让命令在后台运行</li>
+</ul>
+<p>举例：nohup java -jar jar包名称 &amp;&gt; tt.log &amp;：后台运行java -jar命令，并将日志输出到tt.log文件</p>
+<p>nohup java -Xmx1024M -Xms1024M -jar server.jar</p>
+<p>nohup java -jar server.jar </p>
+</li>
+<li><p>停止项目：</p>
+<p>找到进程：ps -ef | grep ‘java -jar’</p>
+<p>杀死进程：kill -9 进程号</p>
+</li>
+</ol>
+<h2 id="通过Shell脚本自动部署项目"><a href="#通过Shell脚本自动部署项目" class="headerlink" title="通过Shell脚本自动部署项目"></a>通过Shell脚本自动部署项目</h2><p>本地开发环境 (push）==&gt; Git仓库(pull) ==&gt; Linux服务器（编译，打包，启动）</p>
+<ol>
+<li><p>在Linux安装Git</p>
+<ul>
+<li><p>列出git安装包：yum list git</p>
+</li>
+<li><p>在线安装git：yum install git</p>
+</li>
+<li><p>使用git克隆代码：cd /usr/local  </p>
+<p>giit clone <a target="_blank" rel="noopener" href="https://github.com/New-zxp/TT-.git">https://github.com/New-zxp/TT-.git</a></p>
+</li>
+</ul>
+</li>
+<li><p>在Linux安装maven</p>
+<p><a target="_blank" rel="noopener" href="https://maven.apache.org/download.cgi">https://maven.apache.org/download.cgi</a></p>
+<p>解压tar -zxvf apache-maven-3.8.6-bin.tar.gz -C/usr/local</p>
+<p>vim /usr/local/etc/profile：修改配置文件加入如下内容:</p>
+<p>MAVEN_HOME=/usr/local/apache-maven-3.8.6</p>
+<p>PATH=$PATH:$MAVEN_HOME/bin</p>
+<p>source /etc/profile：重新加载配置文件</p>
+<p>mvn -version：验证是否修改成功</p>
+<p>在local文件下创建repo文件：mkdir repo</p>
+<p>vi /usr/local/apache-maven-3.8.6/conf/settings.xml：修改配置文件内容</p>
+<p><localRepository>/user/local/repo</localRepository></p>
+</li>
+<li><p>编写Shell脚本(拉取代码，编译，打包，启动)</p>
+<p>在local文件下创建脚本文件夹：mkdir sh</p>
+<p>进入sh文件，创建并编辑脚本文件：vim bootstart.sh</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="built_in">echo</span> =================================</span><br><span class="line"><span class="built_in">echo</span>  自动化部署脚本启动</span><br><span class="line"><span class="built_in">echo</span> =================================</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 停止原来运行中的工程</span><br><span class="line">APP_NAME=TT-0.0.1-SNAPSHOT.jar</span><br><span class="line"> </span><br><span class="line">tpid=`ps -ef|grep <span class="variable">$APP_NAME</span>|grep -v grep|grep -v <span class="built_in">kill</span>|awk <span class="string">&#x27;&#123;print $2&#125;&#x27;</span>`</span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$&#123;tpid&#125;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&#x27;Stop Process...&#x27;</span></span><br><span class="line">    <span class="built_in">kill</span> -15 <span class="variable">$tpid</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="built_in">sleep</span> 2</span><br><span class="line">tpid=`ps -ef|grep <span class="variable">$APP_NAME</span>|grep -v grep|grep -v <span class="built_in">kill</span>|awk <span class="string">&#x27;&#123;print $2&#125;&#x27;</span>`</span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$&#123;tpid&#125;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&#x27;Kill Process!&#x27;</span></span><br><span class="line">    <span class="built_in">kill</span> -9 <span class="variable">$tpid</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&#x27;Stop Success!&#x27;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 准备从Git仓库拉取最新代码</span><br><span class="line"><span class="built_in">cd</span> /usr/local/TT</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 开始从Git仓库拉取最新代码</span><br><span class="line">git pull</span><br><span class="line"><span class="built_in">echo</span> 代码拉取完成</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 开始打包</span><br><span class="line">output=`mvn clean package -Dmaven.test.skip=<span class="literal">true</span>`</span><br><span class="line"> </span><br><span class="line"><span class="built_in">cd</span> target</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 启动项目</span><br><span class="line"><span class="built_in">nohup</span> java -jar TT-0.0.1-SNAPSHOT.jar &amp;&gt; tt.log &amp;</span><br><span class="line"><span class="built_in">echo</span> 项目启动完成</span><br></pre></td></tr></table></figure></li>
+<li><p>为用户授予执行Shell脚本的权限</p>
+<p>chmod 777 bootstart.sh：为所有用户赋予读，写，执行权限</p>
+</li>
+<li><p>执行Shell脚本</p>
+<p>sh bootstart.sh或者./bootstart.sh</p>
+</li>
+<li><p>设置静态ip</p>
+<p>修改文件/etc/sysconfig/network-scripts/ifcfg-ens33(最后名字不一定)</p>
+<p>BOOTPROTO=”static”</p>
+<p>IPADDR=”” //需要和虚拟网络编辑器NAT模式的子网ip一样</p>
+<p>NETMASK=”255.255.255.0”//子网掩码</p>
+<p>GATEWAY=””//需要和虚拟网络编辑器NAT模式的子网ip一样</p>
+<p>DNS1=””//需要和虚拟网络编辑器NAT模式的子网ip一样</p>
+</li>
+<li><p>编辑完成后重新加载：systemctl restart network</p>
+</li>
+</ol>
+<h1 id="Mc"><a href="#Mc" class="headerlink" title="Mc"></a>Mc</h1><p>开放指定端口：firewall-cmd –zone=public –add-port=25565/tcp –permanent</p>
+<p>firewall-cmd –reload</p>
+<p>Linux screen命令用于多重视窗管理程序。<br>有了screen，我们就可以关闭链接让服务器一直运行了。<br>那么先安装screen</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">sudo yum install java<span class="number">-1.8</span><span class="number">.0</span>-openjdk</span><br><span class="line">yum install -y screen</span><br></pre></td></tr></table></figure>
+
+<p>然后创建一个叫mc的终端，（个人理解和窗口差不多。）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">screen -S mc</span><br></pre></td></tr></table></figure>
+
+<p>在这个mc窗口内，打开我们的服务端</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">sudo java -Xmx2G -jar fabric-server-mc<span class="number">.1</span><span class="number">.19</span>-loader<span class="number">.0</span><span class="number">.14</span><span class="number">.10</span>-launcher<span class="number">.0</span><span class="number">.11</span><span class="number">.1</span>.jar nogui</span><br></pre></td></tr></table></figure>
+
+<p>ps -ef | grep ‘ -jar’</p>
+<p>然后然后Ctrl+a 然后按 d 退出终端<br>现在就算关闭会话服务器也会一直运行了。<br>之后在想进入终端的时候只需：screen -ls</p>
+<p>输入screen -r xxxx.mc进入终端</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=25565/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">force-gamemode 是否将玩家强制设置为某一模式</span><br><span class="line"></span><br><span class="line">allow-nether 是否可以进入下界</span><br><span class="line"></span><br><span class="line">gamemode 游戏模式</span><br><span class="line"></span><br><span class="line">difficulty 难度</span><br><span class="line"></span><br><span class="line">spawn-monsters 生成怪物</span><br><span class="line"></span><br><span class="line">op-permission-level 管理员权限等级，控制台拥有最高权限，默认为4（最高）</span><br><span class="line"></span><br><span class="line">pvp 玩家间是否可以互相伤害</span><br><span class="line"></span><br><span class="line">level-type 生成世界类型 default默认 flat超平坦</span><br><span class="line"></span><br><span class="line">hardcore 极限模式（s掉了就会被服务器封禁）</span><br><span class="line"></span><br><span class="line">enable-command-block 是否允许使用命令方块</span><br><span class="line"></span><br><span class="line">max-players 最大玩家数</span><br><span class="line"></span><br><span class="line">rcon.port 远程访问端口</span><br><span class="line"></span><br><span class="line">server-port 服务器端口</span><br><span class="line"></span><br><span class="line">server-ip 服务器ip，默认为127.0.0.1（本机）</span><br><span class="line"></span><br><span class="line">spawn-npcs 生成村民</span><br><span class="line"></span><br><span class="line">level-world 世界名称，也就是世界数据存储的位置</span><br><span class="line"></span><br><span class="line">online-mode 在线模式（true，需要通过官方正版验证，false，无需通过正版验证）</span><br><span class="line"></span><br><span class="line">level-seed 种子</span><br><span class="line"></span><br><span class="line">motd 服务器信息</span><br></pre></td></tr></table></figure>
+
+<p>/function rd_skyblock_is:cmd/start启动地图。</p>
+<p>/scoreboard players set $Delay rd_skyblock_is XXX/ 更改XXX来改变刷新时间</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Snoopy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2022-06-21-Linux.html">http://example.com/2022-06-21-Linux.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post_share"><div class="social-share" data-image="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/avatar.jpg" data-sites="wechat,weibo,qq,facebook,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://zhuxinpeng.oss-cn-hangzhou.aliyuncs.com/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Snoopy</div><div class="author-info__description">青青草原最会编程的羊</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/new-zxp"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/new-zxp" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xxkk3851@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content"><div style="font-size: 18px; font-weight: bold; text-align: center;">
+  🎉欢迎来到我的blog🎉
+</div>
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">Linux概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">Linux安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">Linux目录结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text">Linux常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8"><span class="toc-number">4.1.</span> <span class="toc-text">显示文件列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="toc-number">4.2.</span> <span class="toc-text">切换目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95%E5%92%8C%E7%A7%BB%E9%99%A4%E7%9B%AE%E5%BD%95"><span class="toc-number">4.3.</span> <span class="toc-text">创建目录和移除目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E6%96%87%E4%BB%B6"><span class="toc-number">4.4.</span> <span class="toc-text">浏览文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6%E5%89%AA%E5%88%87%E5%88%A0%E9%99%A4"><span class="toc-number">4.5.</span> <span class="toc-text">文件复制剪切删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%8C%85%E5%92%8C%E8%A7%A3%E5%8E%8B"><span class="toc-number">4.6.</span> <span class="toc-text">打包和解压</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%96%87%E4%BB%B6%E5%92%8C%E5%86%85%E5%AE%B9"><span class="toc-number">4.7.</span> <span class="toc-text">查找文件和内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VI%E5%92%8CVIM%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">4.8.</span> <span class="toc-text">VI和VIM编辑器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91%E8%BE%93%E5%87%BA"><span class="toc-number">4.9.</span> <span class="toc-text">重定向输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-number">4.10.</span> <span class="toc-text">系统管理命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%9D%83%E9%99%90"><span class="toc-number">5.</span> <span class="toc-text">Linux权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C"><span class="toc-number">6.</span> <span class="toc-text">Linux常用网络操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE"><span class="toc-number">6.1.</span> <span class="toc-text">防火墙设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-number">7.</span> <span class="toc-text">Linux安装软件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85wget"><span class="toc-number">7.1.</span> <span class="toc-text">安装wget</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85xui"><span class="toc-number">7.2.</span> <span class="toc-text">安装xui</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85git"><span class="toc-number">7.3.</span> <span class="toc-text">安装git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85node"><span class="toc-number">7.4.</span> <span class="toc-text">安装node</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85JDK"><span class="toc-number">7.5.</span> <span class="toc-text">安装JDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Tomcat"><span class="toc-number">7.6.</span> <span class="toc-text">安装Tomcat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85MYSQL"><span class="toc-number">7.7.</span> <span class="toc-text">安装MYSQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85lrzsz"><span class="toc-number">7.8.</span> <span class="toc-text">安装lrzsz</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Redis"><span class="toc-number">7.9.</span> <span class="toc-text">安装Redis</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2"><span class="toc-number">8.</span> <span class="toc-text">项目部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E5%B7%A5%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2"><span class="toc-number">8.1.</span> <span class="toc-text">手工项目部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Shell%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE"><span class="toc-number">8.2.</span> <span class="toc-text">通过Shell脚本自动部署项目</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mc"><span class="toc-number">9.</span> <span class="toc-text">Mc</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022-06-21-Linux.html" title="Linux笔记">Linux笔记</a><time datetime="2022-06-21T02:00:00.000Z" title="Created 2022-06-21 10:00:00">2022-06-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022-04-16-Nginx.html" title="Nginx笔记">Nginx笔记</a><time datetime="2022-04-16T02:00:00.000Z" title="Created 2022-04-16 10:00:00">2022-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022-02-04-Redis.html" title="Redis笔记">Redis笔记</a><time datetime="2022-02-04T02:00:00.000Z" title="Created 2022-02-04 10:00:00">2022-02-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021-11-24-SpringBoot.html" title="SpringBoot笔记">SpringBoot笔记</a><time datetime="2021-11-24T01:56:41.000Z" title="Created 2021-11-24 09:56:41">2021-11-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021-06-09-SSM.html" title="SSM笔记">SSM笔记</a><time datetime="2021-06-09T01:56:41.000Z" title="Created 2021-06-09 09:56:41">2021-06-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Snoopy</div><div class="framework-info"></div><div class="footer_custom_text">欢迎来到我的blog</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
